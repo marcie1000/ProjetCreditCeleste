@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5B75952C-B169-46E3-A068-BD57CFBCDE6A}</ProjectGuid>
+    <ProjectGuid>{0E863D04-5054-4E1C-B8E1-67E76487D580}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CreditCeleste</RootNamespace>
-    <AssemblyName>CreditCeleste</AssemblyName>
+    <RootNamespace>VehiculeNeufOccasion</RootNamespace>
+    <AssemblyName>VehiculeNeufOccasion</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,37 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bdd.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="Concession.cs" />
     <Compile Include="frmAccueil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAccueil.Designer.cs">
       <DependentUpon>frmAccueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmIntroduction.cs">
+    <Compile Include="frmAcheter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmIntroduction.Designer.cs">
-      <DependentUpon>frmIntroduction.cs</DependentUpon>
+    <Compile Include="frmAcheter.Designer.cs">
+      <DependentUpon>frmAcheter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Globales.cs" />
+    <Compile Include="frmLouer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLouer.Designer.cs">
+      <DependentUpon>frmLouer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVendre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVendre.Designer.cs">
+      <DependentUpon>frmVendre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vendeur.cs" />
-    <Compile Include="frmVoiture.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmVoiture.Designer.cs">
-      <DependentUpon>frmVoiture.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Voiture.cs" />
     <EmbeddedResource Include="frmAccueil.resx">
       <DependentUpon>frmAccueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmIntroduction.resx">
-      <DependentUpon>frmIntroduction.cs</DependentUpon>
+    <EmbeddedResource Include="frmAcheter.resx">
+      <DependentUpon>frmAcheter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLouer.resx">
+      <DependentUpon>frmLouer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVendre.resx">
+      <DependentUpon>frmVendre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,9 +93,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmVoiture.resx">
-      <DependentUpon>frmVoiture.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
