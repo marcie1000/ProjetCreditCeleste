@@ -1,7 +1,6 @@
-
-DROP DATABASE if EXISTS Conscession;
-CREATE DATABASE if not EXISTS Conscession;
-use Conscession;
+DROP DATABASE if EXISTS Concession;
+CREATE DATABASE if not EXISTS Concession;
+use Concession;
 
 
 
@@ -27,19 +26,34 @@ CREATE TABLE VENDEUR(
 CREATE TABLE VEHICULE(
    id INT PRIMARY KEY,
    marque VARCHAR(50),
-   modèle VARCHAR(50),
+   modele VARCHAR(50),
    annee INT,
    kilometrage INT,
    carburant VARCHAR(50),
    etat VARCHAR(50),
    prix DECIMAL(7,2),
-   id_Vendeur INT REFERENCES VENDEUR(id),
-   id_Client INT REFERENCES CLIENT(id)
+   id_vendeur INT,
+   CONSTRAINT fk_id_vendeur
+		FOREIGN KEY (id_vendeur)
+		REFERENCES VENDEUR(id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+   id_client INT
+   CONSTRAINT fk_id_client
+		FOREIGN KEY (id_client)
+		REFERENCES CLIENT(id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
 );
 
 CREATE TABLE LOCATION(
    id INT PRIMARY KEY,
    debutLoc VARCHAR(50),
    finLoc VARCHAR(50),
-   id_Vehicule INT REFERENCES VEHICULE(id)
+   id_vehicule INT
+   CONSTRAINT fk_id_vehicule
+		FOREIGN KEY(id_vehicule)
+		REFERENCES VEHICULE(id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
 );
