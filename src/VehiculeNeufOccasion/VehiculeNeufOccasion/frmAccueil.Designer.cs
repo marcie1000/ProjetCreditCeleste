@@ -30,7 +30,7 @@ namespace VehiculeNeufOccasion
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cmdAcheter = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,14 +44,15 @@ namespace VehiculeNeufOccasion
             this.label1.TabIndex = 0;
             this.label1.Text = "GESTION VOITURES";
             // 
-            // button1
+            // cmdAcheter
             // 
-            this.button1.Location = new System.Drawing.Point(153, 367);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Acheter un véhicule";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmdAcheter.Location = new System.Drawing.Point(153, 367);
+            this.cmdAcheter.Name = "cmdAcheter";
+            this.cmdAcheter.Size = new System.Drawing.Size(95, 44);
+            this.cmdAcheter.TabIndex = 1;
+            this.cmdAcheter.Text = "Acheter un véhicule";
+            this.cmdAcheter.UseVisualStyleBackColor = true;
+            this.cmdAcheter.Click += new System.EventHandler(this.cmdAcheter_Click);
             // 
             // button2
             // 
@@ -78,7 +79,7 @@ namespace VehiculeNeufOccasion
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmdAcheter);
             this.Controls.Add(this.label1);
             this.Name = "frmAccueil";
             this.Text = "Accueil";
@@ -90,7 +91,7 @@ namespace VehiculeNeufOccasion
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cmdAcheter;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
     }
