@@ -16,5 +16,20 @@ namespace VehiculeNeufOccasion
         {
             InitializeComponent();
         }
+
+        private void cmdAcheter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdRevendre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdLouer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
