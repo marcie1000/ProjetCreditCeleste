@@ -8,5 +8,8 @@ namespace VehiculeNeufOccasion
 {
     static class Globales
     {
+        public static frmAcheter fenAcheter;
+        public static frmLouer fenLouer;
+        public static frmVendre fenVendre;
     }
 }
