@@ -29,15 +29,12 @@ namespace VehiculeNeufOccasion
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cbxMarque = new System.Windows.Forms.ComboBox();
+            this.cbxModele = new System.Windows.Forms.ComboBox();
+            this.cbxAnnee = new System.Windows.Forms.ComboBox();
+            this.cbxCarburant = new System.Windows.Forms.ComboBox();
+            this.cmdAfficher = new System.Windows.Forms.Button();
+            this.cmdRetour = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,81 +42,61 @@ namespace VehiculeNeufOccasion
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtBxPrix = new System.Windows.Forms.TextBox();
+            this.txtBxKilometrage = new System.Windows.Forms.TextBox();
+            this.txtBxPuissance = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbxMarque
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(115, 98);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 0;
+            this.cbxMarque.FormattingEnabled = true;
+            this.cbxMarque.Location = new System.Drawing.Point(115, 95);
+            this.cbxMarque.Name = "cbxMarque";
+            this.cbxMarque.Size = new System.Drawing.Size(121, 24);
+            this.cbxMarque.TabIndex = 0;
             // 
-            // comboBox2
+            // cbxModele
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(376, 98);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 1;
+            this.cbxModele.FormattingEnabled = true;
+            this.cbxModele.Location = new System.Drawing.Point(376, 94);
+            this.cbxModele.Name = "cbxModele";
+            this.cbxModele.Size = new System.Drawing.Size(121, 24);
+            this.cbxModele.TabIndex = 1;
             // 
-            // comboBox3
+            // cbxAnnee
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(115, 179);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 2;
+            this.cbxAnnee.FormattingEnabled = true;
+            this.cbxAnnee.Location = new System.Drawing.Point(376, 175);
+            this.cbxAnnee.Name = "cbxAnnee";
+            this.cbxAnnee.Size = new System.Drawing.Size(121, 24);
+            this.cbxAnnee.TabIndex = 3;
             // 
-            // comboBox4
+            // cbxCarburant
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(376, 179);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 24);
-            this.comboBox4.TabIndex = 3;
+            this.cbxCarburant.FormattingEnabled = true;
+            this.cbxCarburant.Location = new System.Drawing.Point(376, 259);
+            this.cbxCarburant.Name = "cbxCarburant";
+            this.cbxCarburant.Size = new System.Drawing.Size(121, 24);
+            this.cbxCarburant.TabIndex = 5;
             // 
-            // comboBox5
+            // cmdAfficher
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(115, 263);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 24);
-            this.comboBox5.TabIndex = 4;
+            this.cmdAfficher.Location = new System.Drawing.Point(376, 349);
+            this.cmdAfficher.Name = "cmdAfficher";
+            this.cmdAfficher.Size = new System.Drawing.Size(75, 23);
+            this.cmdAfficher.TabIndex = 7;
+            this.cmdAfficher.Text = "Afficher";
+            this.cmdAfficher.UseVisualStyleBackColor = true;
             // 
-            // comboBox6
+            // cmdRetour
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(376, 261);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 24);
-            this.comboBox6.TabIndex = 5;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(115, 349);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 24);
-            this.comboBox7.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(376, 349);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Afficher";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(671, 405);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Retour";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cmdRetour.Location = new System.Drawing.Point(671, 405);
+            this.cmdRetour.Name = "cmdRetour";
+            this.cmdRetour.Size = new System.Drawing.Size(75, 23);
+            this.cmdRetour.TabIndex = 8;
+            this.cmdRetour.Text = "Retour";
+            this.cmdRetour.UseVisualStyleBackColor = true;
+            this.cmdRetour.Click += new System.EventHandler(this.cmdRetour_Click);
             // 
             // label1
             // 
@@ -184,11 +161,35 @@ namespace VehiculeNeufOccasion
             this.label7.TabIndex = 15;
             this.label7.Text = "Puissance (ch)";
             // 
+            // txtBxPrix
+            // 
+            this.txtBxPrix.Location = new System.Drawing.Point(115, 176);
+            this.txtBxPrix.Name = "txtBxPrix";
+            this.txtBxPrix.Size = new System.Drawing.Size(100, 22);
+            this.txtBxPrix.TabIndex = 16;
+            // 
+            // txtBxKilometrage
+            // 
+            this.txtBxKilometrage.Location = new System.Drawing.Point(115, 260);
+            this.txtBxKilometrage.Name = "txtBxKilometrage";
+            this.txtBxKilometrage.Size = new System.Drawing.Size(100, 22);
+            this.txtBxKilometrage.TabIndex = 17;
+            // 
+            // txtBxPuissance
+            // 
+            this.txtBxPuissance.Location = new System.Drawing.Point(115, 346);
+            this.txtBxPuissance.Name = "txtBxPuissance";
+            this.txtBxPuissance.Size = new System.Drawing.Size(100, 22);
+            this.txtBxPuissance.TabIndex = 18;
+            // 
             // frmAcheter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtBxPuissance);
+            this.Controls.Add(this.txtBxKilometrage);
+            this.Controls.Add(this.txtBxPrix);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -196,15 +197,12 @@ namespace VehiculeNeufOccasion
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox7);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmdRetour);
+            this.Controls.Add(this.cmdAfficher);
+            this.Controls.Add(this.cbxCarburant);
+            this.Controls.Add(this.cbxAnnee);
+            this.Controls.Add(this.cbxModele);
+            this.Controls.Add(this.cbxMarque);
             this.Name = "frmAcheter";
             this.Text = "Acheter un véhicule";
             this.ResumeLayout(false);
@@ -214,15 +212,12 @@ namespace VehiculeNeufOccasion
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cbxMarque;
+        private System.Windows.Forms.ComboBox cbxModele;
+        private System.Windows.Forms.ComboBox cbxAnnee;
+        private System.Windows.Forms.ComboBox cbxCarburant;
+        private System.Windows.Forms.Button cmdAfficher;
+        private System.Windows.Forms.Button cmdRetour;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -230,5 +225,8 @@ namespace VehiculeNeufOccasion
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtBxPrix;
+        private System.Windows.Forms.TextBox txtBxKilometrage;
+        private System.Windows.Forms.TextBox txtBxPuissance;
     }
 }
