@@ -10,7 +10,7 @@ CREATE TABLE VEHICULE(
    kilometrage INT,
    carburant VARCHAR(50) ,
    etat VARCHAR(50) ,
-   prix MONEY,
+   prix DECIMAL,
    PRIMARY KEY(id)
 );
 
@@ -54,7 +54,7 @@ CREATE TABLE GARAGE(
    codePostal VARCHAR(50) ,
    ville VARCHAR(50) ,
    telephone VARCHAR(50) ,
-   id_1 INT NOT NULL,
+   id_1 INT ,
    PRIMARY KEY(id),
    FOREIGN KEY(id_1) REFERENCES REGION(id)
 );
@@ -66,19 +66,19 @@ CREATE TABLE AGENCE_CREDIT_CELESTE(
    nomRue VARCHAR(50) ,
    codePostal VARCHAR(50) ,
    ville VARCHAR(50) ,
-   id_1 INT NOT NULL,
+   id_1 INT ,
    PRIMARY KEY(id),
    FOREIGN KEY(id_1) REFERENCES REGION(id)
 );
 
 CREATE TABLE VENTE(
    id INT,
-   dateV DATE NOT NULL,
-   montant MONEY,
+   dateV DATE ,
+   montant DECIMAL,
    validee BIT,
-   id_1 INT NOT NULL,
-   id_2 INT NOT NULL,
-   id_3 INT NOT NULL,
+   id_1 INT ,
+   id_2 INT ,
+   id_3 INT ,
    PRIMARY KEY(id),
    FOREIGN KEY(id_1) REFERENCES GARAGE(id),
    FOREIGN KEY(id_2) REFERENCES CLIENT(id),
@@ -88,10 +88,10 @@ CREATE TABLE VENTE(
 CREATE TABLE ACHAT(
    id INT,
    dateA DATE,
-   montant MONEY,
-   id_1 INT NOT NULL,
-   id_2 INT NOT NULL,
-   id_3 INT NOT NULL,
+   montant DECIMAL,
+   id_1 INT ,
+   id_2 INT ,
+   id_3 INT ,
    PRIMARY KEY(id),
    FOREIGN KEY(id_1) REFERENCES VENDEUR(id),
    FOREIGN KEY(id_2) REFERENCES VEHICULE(id),
@@ -105,10 +105,10 @@ CREATE TABLE LOCATION(
    finLoc DATE,
    kilometrageDebut INT,
    kilometrageFin INT,
-   prixRevientKm MONEY,
-   id_1 INT NOT NULL,
-   id_2 INT NOT NULL,
-   id_3 INT NOT NULL,
+   prixRevientKm DECIMAL,
+   id_1 INT ,
+   id_2 INT ,
+   id_3 INT ,
    PRIMARY KEY(id),
    FOREIGN KEY(id_1) REFERENCES CLIENT(id),
    FOREIGN KEY(id_2) REFERENCES VEHICULE(id),
@@ -117,16 +117,16 @@ CREATE TABLE LOCATION(
 
 CREATE TABLE DEMANDE_PRET(
    id INT,
-   montantTotal MONEY,
+   montantTotal DECIMAL,
    valide BIT,
    attenteValidation BIT,
    dateOuverture DATE,
    NombreMensualites INT,
-   prixMensualite MONEY,
+   prixMensualite DECIMAL,
    taux FLOAT,
-   premierApport MONEY,
-   id_1 INT NOT NULL,
-   id_2 INT NOT NULL,
+   premierApport DECIMAL,
+   id_1 INT ,
+   id_2 INT ,
    PRIMARY KEY(id),
    FOREIGN KEY(id_1) REFERENCES AGENCE_CREDIT_CELESTE(id),
    FOREIGN KEY(id_2) REFERENCES VENTE(id)
