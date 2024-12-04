@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VehiculeNeufOccasion
+{
+    static class Globales
+    {
+        public static frmAcheter fenAcheter;
+        public static frmLouer fenLouer;
+        public static frmVendre fenVendre;
+    }
+}
