@@ -16,10 +16,5 @@ namespace VehiculeNeufOccasion
         {
             InitializeComponent();
         }
-
-        private void cmdAcheter_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

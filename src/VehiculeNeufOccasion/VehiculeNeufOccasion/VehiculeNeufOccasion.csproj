@@ -70,7 +70,6 @@
     <Compile Include="frmVendre.Designer.cs">
       <DependentUpon>frmVendre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Globales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAccueil.resx">
