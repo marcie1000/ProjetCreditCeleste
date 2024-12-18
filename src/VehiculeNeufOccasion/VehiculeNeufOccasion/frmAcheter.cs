@@ -16,5 +16,10 @@ namespace VehiculeNeufOccasion
         {
             InitializeComponent();
         }
+
+        private void frmAcheter_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,15 @@ namespace VehiculeNeufOccasion
         {
             InitializeComponent();
         }
+
+        private void frmLouer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctrlVoiture1_Load(object sender, EventArgs e)
+        {
+            ctrlVoiture1.Modele = "dripstone";
+        }
     }
 }

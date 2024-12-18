@@ -30,58 +30,88 @@ namespace VehiculeNeufOccasion
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAcheter = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnLouer = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(317, 88);
+            this.label1.Location = new System.Drawing.Point(652, 146);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 17);
+            this.label1.Size = new System.Drawing.Size(209, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "GESTION VOITURES";
             // 
-            // button1
+            // btnAcheter
             // 
-            this.button1.Location = new System.Drawing.Point(153, 367);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Acheter un véhicule";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAcheter.Location = new System.Drawing.Point(351, 1041);
+            this.btnAcheter.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAcheter.Name = "btnAcheter";
+            this.btnAcheter.Size = new System.Drawing.Size(250, 70);
+            this.btnAcheter.TabIndex = 1;
+            this.btnAcheter.Text = "Acheter un véhicule";
+            this.btnAcheter.UseVisualStyleBackColor = true;
+            this.btnAcheter.Click += new System.EventHandler(this.btnAcheter_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(344, 367);
+            this.button2.Location = new System.Drawing.Point(637, 1041);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 44);
+            this.button2.Size = new System.Drawing.Size(250, 70);
             this.button2.TabIndex = 2;
             this.button2.Text = "Revendre un véhicule";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnLouer
             // 
-            this.button3.Location = new System.Drawing.Point(551, 367);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 44);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Louer un véhicule";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnLouer.Location = new System.Drawing.Point(921, 1041);
+            this.btnLouer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLouer.Name = "btnLouer";
+            this.btnLouer.Size = new System.Drawing.Size(250, 70);
+            this.btnLouer.TabIndex = 3;
+            this.btnLouer.Text = "Louer un véhicule";
+            this.btnLouer.UseVisualStyleBackColor = true;
+            this.btnLouer.Click += new System.EventHandler(this.btnLouer_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(637, 195);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(774, 796);
+            this.panel1.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(125, 195);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(506, 796);
+            this.panel2.TabIndex = 5;
             // 
             // frmAccueil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1976, 1436);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnLouer);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAcheter);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(2000, 1500);
+            this.MinimumSize = new System.Drawing.Size(2000, 1500);
             this.Name = "frmAccueil";
             this.Text = "Accueil";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmAccueil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,9 +120,11 @@ namespace VehiculeNeufOccasion
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAcheter;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnLouer;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
