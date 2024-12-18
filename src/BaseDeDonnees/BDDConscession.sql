@@ -11,8 +11,8 @@ DROP TABLE IF EXISTS GARAGE;
 DROP TABLE IF EXISTS REGION;
 DROP TABLE IF EXISTS CLIENT;
 DROP TABLE IF EXISTS VENDEUR;
-
 DROP TABLE IF EXISTS VEHICULE;
+
 CREATE TABLE VEHICULE(
    id INT NOT NULL IDENTITY,
    marque VARCHAR(50) ,
@@ -69,9 +69,9 @@ CREATE TABLE GARAGE(
    codePostal VARCHAR(50) ,
    ville VARCHAR(50) ,
    telephone VARCHAR(50) ,
-   id_1 INT ,
+   id_region INT ,
    PRIMARY KEY(id),
-   FOREIGN KEY(id_1) REFERENCES REGION(id)
+   FOREIGN KEY(id_region) REFERENCES REGION(id)
 );
 
 
@@ -82,9 +82,9 @@ CREATE TABLE AGENCE_CREDIT_CELESTE(
    nomRue VARCHAR(50) ,
    codePostal VARCHAR(50) ,
    ville VARCHAR(50) ,
-   id_1 INT ,
+   id_region INT ,
    PRIMARY KEY(id),
-   FOREIGN KEY(id_1) REFERENCES REGION(id)
+   FOREIGN KEY(id_region) REFERENCES REGION(id)
 );
 
 
@@ -93,13 +93,13 @@ CREATE TABLE VENTE(
    dateV DATE ,
    montant DECIMAL,
    validee BIT,
-   id_1 INT ,
-   id_2 INT ,
-   id_3 INT ,
+   id_garage INT ,
+   id_client INT ,
+   id_vehicule INT ,
    PRIMARY KEY(id),
-   FOREIGN KEY(id_1) REFERENCES GARAGE(id),
-   FOREIGN KEY(id_2) REFERENCES CLIENT(id),
-   FOREIGN KEY(id_3) REFERENCES VEHICULE(id)
+   FOREIGN KEY(id_garage) REFERENCES GARAGE(id),
+   FOREIGN KEY(id_client) REFERENCES CLIENT(id),
+   FOREIGN KEY(id_vehicule) REFERENCES VEHICULE(id)
 );
 
 
@@ -107,13 +107,13 @@ CREATE TABLE ACHAT(
    id INT NOT NULL IDENTITY,
    dateA DATE,
    montant DECIMAL,
-   id_1 INT ,
-   id_2 INT ,
-   id_3 INT ,
+   id_vendeur INT ,
+   id_vehicule INT ,
+   id_garage INT ,
    PRIMARY KEY(id),
-   FOREIGN KEY(id_1) REFERENCES VENDEUR(id),
-   FOREIGN KEY(id_2) REFERENCES VEHICULE(id),
-   FOREIGN KEY(id_3) REFERENCES GARAGE(id)
+   FOREIGN KEY(id_vendeur) REFERENCES VENDEUR(id),
+   FOREIGN KEY(id_vehicule) REFERENCES VEHICULE(id),
+   FOREIGN KEY(id_garage) REFERENCES GARAGE(id)
 );
 
 CREATE TABLE LES_LOCATIONS(
@@ -124,13 +124,13 @@ CREATE TABLE LES_LOCATIONS(
    kilometrageDebut INT,
    kilometrageFin INT,
    prixRevientKm DECIMAL,
-   id_1 INT ,
-   id_2 INT ,
-   id_3 INT ,
+   id_client INT ,
+   id_vehicule INT ,
+   id_garage INT ,
    PRIMARY KEY(id),
-   FOREIGN KEY(id_1) REFERENCES CLIENT(id),
-   FOREIGN KEY(id_2) REFERENCES VEHICULE(id),
-   FOREIGN KEY(id_3) REFERENCES GARAGE(id)
+   FOREIGN KEY(id_client) REFERENCES CLIENT(id),
+   FOREIGN KEY(id_vehicule) REFERENCES VEHICULE(id),
+   FOREIGN KEY(id_garage) REFERENCES GARAGE(id)
 );
 
 CREATE TABLE DEMANDE_PRET(
@@ -143,9 +143,13 @@ CREATE TABLE DEMANDE_PRET(
    prixMensualite DECIMAL,
    taux FLOAT,
    premierApport DECIMAL,
-   id_1 INT ,
-   id_2 INT ,
+   id_agenceCreditCeleste INT ,
+   id_vente INT ,
    PRIMARY KEY(id),
-   FOREIGN KEY(id_1) REFERENCES AGENCE_CREDIT_CELESTE(id),
-   FOREIGN KEY(id_2) REFERENCES VENTE(id)
+   FOREIGN KEY(id_agenceCreditCeleste) REFERENCES AGENCE_CREDIT_CELESTE(id),
+   FOREIGN KEY(id_vente) REFERENCES VENTE(id)
 );
+
+INSERT INTO VEHICULE(marque, modele, annee, kilometrage, carburant, etat, prix) VALUES('TESTMARQUE', 'TESTVEHICULE', 2014, 100000, 'Essence', 'Bon', 4000);
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON DATABASE :: Concession To cnxEleveSio WITH GRANT OPTION;
