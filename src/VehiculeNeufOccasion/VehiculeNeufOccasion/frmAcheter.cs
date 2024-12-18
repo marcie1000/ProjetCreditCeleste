@@ -24,5 +24,9 @@ namespace VehiculeNeufOccasion
             Globales.fenAccueil.Show();
             this.Hide();  // masquer la fenêtre, l'objet courant
         }
+
+        private void cbxMarque_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

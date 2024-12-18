@@ -49,11 +49,80 @@ namespace VehiculeNeufOccasion
             // 
             // cbxMarque
             // 
+            this.cbxMarque.AutoCompleteCustomSource.AddRange(new string[] {
+            "Abarth  ",
+            "Acura  ",
+            "Alfa Romeo  ",
+            "Alpine  ",
+            "Aston Martin  ",
+            "Audi  ",
+            "Bentley  ",
+            "BMW  ",
+            "Bugatti  ",
+            "Buick  ",
+            "Cadillac  ",
+            "Caterham  ",
+            "Chevrolet  ",
+            "Chrysler  ",
+            "Citroën  ",
+            "Dacia  ",
+            "Daewoo  ",
+            "Daihatsu  ",
+            "Dodge  ",
+            "Ferrari  ",
+            "Fiat  ",
+            "Fisker  ",
+            "Ford  ",
+            "GMC  ",
+            "Genesis  ",
+            "Honda  ",
+            "Hummer  ",
+            "Hyundai  ",
+            "Infiniti  ",
+            "Isuzu  ",
+            "Jaguar  ",
+            "Jeep  ",
+            "Kia  ",
+            "Koenigsegg  ",
+            "Lamborghini  ",
+            "Lancia  ",
+            "Land Rover  ",
+            "Lexus  ",
+            "Lincoln  ",
+            "Lotus  ",
+            "Maserati  ",
+            "Mazda  ",
+            "McLaren  ",
+            "Mercedes-Benz  ",
+            "Mini  ",
+            "Mitsubishi  ",
+            "Nissan  ",
+            "Opel  ",
+            "Pagani  ",
+            "Peugeot  ",
+            "Polestar  ",
+            "Porsche  ",
+            "RAM  ",
+            "Renault  ",
+            "Rolls-Royce  ",
+            "Saab  ",
+            "Seat  ",
+            "Škoda  ",
+            "Smart  ",
+            "SsangYong  ",
+            "Subaru  ",
+            "Suzuki  ",
+            "Tesla  ",
+            "Toyota  ",
+            "Volkswagen  ",
+            "Volvo  "});
+            this.cbxMarque.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.cbxMarque.FormattingEnabled = true;
             this.cbxMarque.Location = new System.Drawing.Point(115, 95);
             this.cbxMarque.Name = "cbxMarque";
             this.cbxMarque.Size = new System.Drawing.Size(121, 24);
             this.cbxMarque.TabIndex = 0;
+            this.cbxMarque.SelectedIndexChanged += new System.EventHandler(this.cbxMarque_SelectedIndexChanged);
             // 
             // cbxModele
             // 
