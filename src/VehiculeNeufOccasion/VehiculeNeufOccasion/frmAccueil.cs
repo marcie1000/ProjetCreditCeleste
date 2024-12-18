@@ -14,6 +14,7 @@ namespace VehiculeNeufOccasion
     {
         frmLouer louer = new frmLouer();
         frmAcheter acheter = new frmAcheter();
+        frmVendre revendre = new frmVendre();
         public Voiture vTemp = new Voiture();
 
         private void HideAllForms()
@@ -108,6 +109,32 @@ namespace VehiculeNeufOccasion
             // Affiche le formulaire
             acheter.BringToFront();
             acheter.Show();
+        }
+
+        private void btnRevendre_Click(object sender, EventArgs e)
+        {
+
+            if (revendre == null || revendre.IsDisposed)
+            {
+                frmVendre revendre = new frmVendre();
+            }
+            if (!panel1.Controls.Contains(revendre))
+            {
+                // Configure le formulaire pour qu'il soit enfant du Panel
+                revendre.TopLevel = false; // Pas une fenêtre indépendante
+                revendre.FormBorderStyle = FormBorderStyle.None; // Pas de bordure
+                revendre.Dock = DockStyle.Fill; // Remplit le Panel
+
+                // Ajoute le formulaire au Panel
+                panel1.Controls.Add(revendre);
+            }
+
+            //Cacher les autres formulaires
+            HideAllForms();
+
+            // Affiche le formulaire
+            revendre.BringToFront();
+            revendre.Show();
         }
     }
 }

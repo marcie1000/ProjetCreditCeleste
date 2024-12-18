@@ -31,7 +31,7 @@ namespace VehiculeNeufOccasion
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnAcheter = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRevendre = new System.Windows.Forms.Button();
             this.btnLouer = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,15 +58,16 @@ namespace VehiculeNeufOccasion
             this.btnAcheter.UseVisualStyleBackColor = true;
             this.btnAcheter.Click += new System.EventHandler(this.btnAcheter_Click);
             // 
-            // button2
+            // btnRevendre
             // 
-            this.button2.Location = new System.Drawing.Point(637, 1041);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 70);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Revendre un véhicule";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRevendre.Location = new System.Drawing.Point(637, 1041);
+            this.btnRevendre.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRevendre.Name = "btnRevendre";
+            this.btnRevendre.Size = new System.Drawing.Size(250, 70);
+            this.btnRevendre.TabIndex = 2;
+            this.btnRevendre.Text = "Revendre un véhicule";
+            this.btnRevendre.UseVisualStyleBackColor = true;
+            this.btnRevendre.Click += new System.EventHandler(this.btnRevendre_Click);
             // 
             // btnLouer
             // 
@@ -102,7 +103,7 @@ namespace VehiculeNeufOccasion
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnLouer);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnRevendre);
             this.Controls.Add(this.btnAcheter);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -121,7 +122,7 @@ namespace VehiculeNeufOccasion
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAcheter;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRevendre;
         private System.Windows.Forms.Button btnLouer;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
