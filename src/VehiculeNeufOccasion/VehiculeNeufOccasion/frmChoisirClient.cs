@@ -17,15 +17,32 @@ namespace VehiculeNeufOccasion
             InitializeComponent();
         }
 
-        private void listView1_ItemChecked(object sender, ItemCheckedEventArgs e)
-        {
-            if (listView1.SelectedItems.Count != 0)
-                btnChoisir.Enabled = true;
-        }
-
         private void btnRechercher_Click(object sender, EventArgs e)
         {
+            if (!LogiqueClients.rechercheClient(txtNom.Text, txtPrenom.Text))
+                return;
 
+            listView1.Items.Clear();
+
+            foreach(Client c in Globales.ClientsRecherche.Values)
+            {
+                ListViewItem item = new ListViewItem(c.Nom);
+                item.SubItems.Add(c.Prenom);
+                item.SubItems.Add(c.Email);
+                listView1.Items.Add(item);
+            }
+        }
+
+        private void btnChoisir_Click(object sender, EventArgs e)
+        {
+            if(listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Vous devez sélectionner un client.");
+                return;
+            }
+
+            Globales.clientSelectionne = Globales.ClientsRecherche.Values.ToList()[listView1.SelectedIndices[0]];
+            this.Close();
         }
     }
 }

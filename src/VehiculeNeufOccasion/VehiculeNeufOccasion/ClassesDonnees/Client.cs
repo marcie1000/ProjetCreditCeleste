@@ -11,13 +11,13 @@ namespace VehiculeNeufOccasion
 
         public string Nom { get; set; }
 
-        public int NumRue { get; set; }
+        public string NumRue { get; set; }
 
         public int Cp { get; set; }
 
         public string Ville { get; set; }
 
-        public int NumTelephone { get; set; }
+        public string NumTelephone { get; set; }
 
         public string Rue { get; set; }
 

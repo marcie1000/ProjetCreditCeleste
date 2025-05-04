@@ -30,8 +30,8 @@ namespace VehiculeNeufOccasion
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.txtPrenom = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRechercher = new System.Windows.Forms.Button();
@@ -54,21 +54,21 @@ namespace VehiculeNeufOccasion
             this.label1.TabIndex = 0;
             this.label1.Text = "Rechercher un client dans la base de données";
             // 
-            // textBox1
+            // txtNom
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(245, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(242, 27);
-            this.textBox1.TabIndex = 1;
+            this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNom.Location = new System.Drawing.Point(245, 118);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(242, 27);
+            this.txtNom.TabIndex = 1;
             // 
-            // textBox2
+            // txtPrenom
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(513, 118);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(242, 27);
-            this.textBox2.TabIndex = 2;
+            this.txtPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrenom.Location = new System.Drawing.Point(513, 118);
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.Size = new System.Drawing.Size(242, 27);
+            this.txtPrenom.TabIndex = 2;
             // 
             // label2
             // 
@@ -111,12 +111,12 @@ namespace VehiculeNeufOccasion
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 284);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(969, 255);
             this.listView1.TabIndex = 6;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.listView1_ItemChecked);
             // 
             // NOM
             // 
@@ -152,6 +152,7 @@ namespace VehiculeNeufOccasion
             this.btnChoisir.TabIndex = 8;
             this.btnChoisir.Text = "Choisir ce client";
             this.btnChoisir.UseVisualStyleBackColor = true;
+            this.btnChoisir.Click += new System.EventHandler(this.btnChoisir_Click);
             // 
             // button1
             // 
@@ -175,10 +176,10 @@ namespace VehiculeNeufOccasion
             this.Controls.Add(this.btnRechercher);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPrenom);
+            this.Controls.Add(this.txtNom);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmChoisirClient";
             this.Text = "Choisir un client";
             this.ResumeLayout(false);
@@ -189,8 +190,8 @@ namespace VehiculeNeufOccasion
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.TextBox txtPrenom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRechercher;
