@@ -43,5 +43,23 @@ namespace VehiculeNeufOccasion
             this.Hide();  // masquer la fenêtre, l'objet courant 
 
         }
+
+        private void btnCreerUser_Click(object sender, EventArgs e)
+        {
+            if (Globales.fenCreerUser == null)
+                Globales.fenCreerUser = new frmCreationUser();
+            Globales.fenCreerUser.Show();
+        }
+
+        private void frmAccueil_Load(object sender, EventArgs e)
+        {
+            gpbCompte.Visible = false;
+            gpbCompte.Enabled = false;
+        }
+
+        private void btnValider_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

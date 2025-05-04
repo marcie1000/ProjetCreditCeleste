@@ -24,5 +24,34 @@ namespace VehiculeNeufOccasion
             Globales.fenAccueil.Show();
             this.Hide();  // masquer la fenêtre, l'objet courant
         }
+
+        private void frmVendre_Shown(object sender, EventArgs e)
+        {
+            try
+            {
+                lblMessage.Text = "Recherche des véhicules disponibles.";
+                lblMessage.Visible = false;
+                LogiqueVente.getLesVehiculesDuGarage();
+                listViewVehicules.Items.Clear();
+                foreach(Vehicule v in Globales.Vehicules.Values)
+                {
+                    ListViewItem item = new ListViewItem(v.IdModeleNavigation.IdMarqueNavigation.Nom);
+                    item.SubItems.Add(v.IdModeleNavigation.Nom);
+                    item.SubItems.Add(v.Annee.ToString());
+                    item.SubItems.Add(v.Kilometrage.ToString());
+                    item.SubItems.Add(v.Prix.ToString() + " €");
+                    item.SubItems.Add(v.Puissance.ToString());
+                    item.SubItems.Add(v.Couleur.ToString());
+                    item.SubItems.Add(v.IdCarburantNavigation.Designation);
+                    item.SubItems.Add(v.IdEtatNavigation.Designation);
+                    listViewVehicules.Items.Add(item);
+                }
+                lblMessage.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
