@@ -61,7 +61,9 @@ namespace VehiculeNeufOccasion
                 MessageBox.Show("Veuillez sélectionner un véhicule !");
                 return;
             }
-            Globales.vehiculeSelectionne = Globales.Vehicules[listViewVehicules.SelectedItems[0].Index];
+            Globales.vehiculeSelectionne = Globales.Vehicules.Values.ToList()[listViewVehicules.SelectedItems[0].Index];
+            frmChoisirClient fenChoisirClient = new frmChoisirClient();
+            fenChoisirClient.ShowDialog();
             
         }
     }

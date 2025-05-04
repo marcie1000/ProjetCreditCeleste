@@ -11,7 +11,9 @@ namespace VehiculeNeufOccasion
     static class Globales
     {
         public static frmAccueil fenAccueil;
-        public static Form fenetreConteneur; // fenêtre actuellement dans le conteneur de fenAccueil
+        // chaîne de fenêtres actuellement dans le conteneur de fenAccueil
+        // la liste permet de faire "Retour"
+        public static List<Form> fenetresConteneur = new List<Form>(); 
         //public const string adresseSqlServer = "192.168.43.130";
         public static int idGarage = 1;
         public static Garage LeGarage;
@@ -23,6 +25,8 @@ namespace VehiculeNeufOccasion
         public static Dictionary<int, Vehicule> Vehicules = new Dictionary<int, Vehicule>();
         public static Dictionary<int, Modele> Modeles = new Dictionary<int, Modele>();
         public static Dictionary<int, Personne> Personnes = new Dictionary<int, Personne>();
+        public static Dictionary<int, Client> ClientsRecherche = new Dictionary<int, Client>();
+        public static Client clientSelectionne;
         public static Vehicule vehiculeSelectionne;
     }
 }

@@ -94,10 +94,10 @@ CREATE TABLE concession.CLIENT(
    id INT NOT NULL IDENTITY,
    prenom VARCHAR(50) ,
    nom VARCHAR(50) ,
-   numRue INT,
+   numRue VARCHAR(50),
    cp INT,
    ville VARCHAR(50) ,
-   numTelephone INT,
+   numTelephone VARCHAR(50),
    rue VARCHAR(50) ,
    email VARCHAR(50) ,
    id_personne INT NOT NULL,
@@ -117,7 +117,7 @@ CREATE TABLE concession.GARAGE(
    id_personne INT ,
    PRIMARY KEY(id),
    FOREIGN KEY(id_region) REFERENCES concession.REGION(id),
-   FOREIGN KEY(id_personne) REFERENCES concession.PERSONNE(id)
+      FOREIGN KEY(id_personne) REFERENCES concession.PERSONNE(id)
 );
 
 CREATE TABLE concession.VENDEUR(
@@ -236,6 +236,9 @@ INSERT INTO concession.ETAT(designation) VALUES('Mauvais état');
 
 insert into concession.REGION(nom) VALUES('Alsace');
 
+-- Le garage
+insert into concession.PERSONNE DEFAULT VALUES;
+-- Le client 1
 insert into concession.PERSONNE DEFAULT VALUES;
 
 insert into concession.GARAGE(raisonSociale, locRue, nomRue, codePostal, ville, telephone, id_personne, id_region)
@@ -251,6 +254,8 @@ insert into concession.VEHICULE(annee, kilometrage, prix, id_etat, id_carburant,
 insert into concession.VEHICULE(annee, kilometrage, prix, id_etat, id_carburant, id_modele, puissance, couleur, id_personnePossession) VALUES(2009, 287000, 1000, 3, 2, 2, 100, 'Jaune', 1);
 insert into concession.VEHICULE(annee, kilometrage, prix, id_etat, id_carburant, id_modele, puissance, couleur, id_personnePossession) VALUES(2015, 95000, 7000, 2, 3, 4, 90, 'Noir', 1);
 insert into concession.VEHICULE(annee, kilometrage, prix, id_etat, id_carburant, id_modele, puissance, couleur, id_personnePossession) VALUES(2025, 100, 21000, 1, 3, 4, 120, 'Bleu', 1);
+
+INSERT INTO concession.CLIENT(prenom, nom, numRue, cp, ville, numTelephone, rue, email, id_personne) VALUES('Alice', 'COLTRANE', '8', '67000', 'STRASBOURG', '0355555555', 'Rue de jsp', 'alice.coltrane@mail.com', 2)
 
 
 -- GRANT SELECT, INSERT, UPDATE, DELETE ON DATABASE :: Concession To cnxEleveSio WITH GRANT OPTION;

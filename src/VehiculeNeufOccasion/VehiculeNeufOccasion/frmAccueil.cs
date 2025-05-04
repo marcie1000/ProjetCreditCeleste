@@ -17,27 +17,42 @@ namespace VehiculeNeufOccasion
             InitializeComponent();
         }
 
+        public void fermerDerniereFenetrePileConteneur()
+        {
+            panelConteneur.Controls.Clear();
+            Globales.fenetresConteneur.Last().Close();
+            Globales.fenetresConteneur.RemoveAt(Globales.fenetresConteneur.Count - 1);
+            panelConteneur.Controls.Add(Globales.fenetresConteneur.Last());
+        }
+
+        public void ajouterFenetrePileConteneur(Form fenetre)
+        {
+            Globales.fenetresConteneur.Add(fenetre);
+            panelConteneur.Controls.Clear();
+            panelConteneur.Controls.Add(fenetre);
+            fenetre.Show();
+            this.Text = fenetre.Text;
+        }
+
         /// <summary>
-        /// Permet d'afficher une nouvelle fenêtre dans le conteneur de frmAccueil et de fermer l'ancien affiché.
+        /// Permet d'afficher une nouvelle fenêtre dans le conteneur de frmAccueil et de fermer l'ancienne affichée.
         /// </summary>
         /// <param name="fenetre"></param>
-        public void changerFenetreConteneur(Form fenetre)
+        public void changerFenetreDeBaseConteneur(Form fenetre)
         {
             // supprimer l'ancienne fenêtre du conteneur
             panelConteneur.Controls.Clear();
             
             // fermer l'ancienne fenêtre
-            Form ancienneFenetre;
-            if (Globales.fenetreConteneur != null)
+            for(int i = 0; i < Globales.fenetresConteneur.Count; i++)
             {
-                ancienneFenetre = Globales.fenetreConteneur;
-                ancienneFenetre.Close();
-                Globales.fenetreConteneur.Dispose();
-                Globales.fenetreConteneur = null;
+                Globales.fenetresConteneur.Last().Close();
             }
 
+            Globales.fenetresConteneur.Clear();
+
             // enregistrer dans Globales
-            Globales.fenetreConteneur = fenetre;
+            Globales.fenetresConteneur.Add(fenetre);
 
             // afficher dans le conteneur
             fenetre.Parent = this;
@@ -49,26 +64,26 @@ namespace VehiculeNeufOccasion
         private void cmdAcheter_Click(object sender, EventArgs e)
         {
             frmAcheter nouvelleFen = new frmAcheter() { TopLevel = false, TopMost = true };
-            changerFenetreConteneur(nouvelleFen);
+            changerFenetreDeBaseConteneur(nouvelleFen);
         }
 
         private void cmdRevendre_Click(object sender, EventArgs e)
         {
             frmVendre nouvelleFen = new frmVendre() { TopLevel = false, TopMost = true };
-            changerFenetreConteneur(nouvelleFen);
+            changerFenetreDeBaseConteneur(nouvelleFen);
             //this.Hide();  // masquer la fenêtre, l'objet courant 
         }
 
         private void cmdLouer_Click(object sender, EventArgs e)
         {
             frmLouer nouvelleFen = new frmLouer() { TopLevel = false, TopMost = true };
-            changerFenetreConteneur(nouvelleFen);
+            changerFenetreDeBaseConteneur(nouvelleFen);
         }
 
         private void btnCreerUser_Click(object sender, EventArgs e)
         {
             frmCreationUser nouvelleFen = new frmCreationUser() { TopLevel = false, TopMost = true };
-            changerFenetreConteneur(nouvelleFen);
+            changerFenetreDeBaseConteneur(nouvelleFen);
         }
 
         private void frmAccueil_Load(object sender, EventArgs e)
