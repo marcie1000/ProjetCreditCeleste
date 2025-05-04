@@ -160,7 +160,8 @@ namespace VehiculeNeufOccasion
             else
                 MessageBox.Show("La base de données à rencontré un problème.");
 
-            Application.Run(new frmAccueil());
+            Globales.fenAccueil = new frmAccueil();
+            Application.Run(Globales.fenAccueil);
         }
     }
 }

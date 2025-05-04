@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 
 namespace VehiculeNeufOccasion
@@ -10,10 +11,7 @@ namespace VehiculeNeufOccasion
     static class Globales
     {
         public static frmAccueil fenAccueil;
-        public static frmAcheter fenAcheter;
-        public static frmLouer fenLouer;
-        public static frmVendre fenVendre;
-        public static frmCreationUser fenCreerUser;
+        public static Form fenetreConteneur; // fenêtre actuellement dans le conteneur de fenAccueil
         //public const string adresseSqlServer = "192.168.43.130";
         public static int idGarage = 1;
         public static Garage LeGarage;
@@ -25,5 +23,6 @@ namespace VehiculeNeufOccasion
         public static Dictionary<int, Vehicule> Vehicules = new Dictionary<int, Vehicule>();
         public static Dictionary<int, Modele> Modeles = new Dictionary<int, Modele>();
         public static Dictionary<int, Personne> Personnes = new Dictionary<int, Personne>();
+        public static Vehicule vehiculeSelectionne;
     }
 }
