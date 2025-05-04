@@ -272,6 +272,7 @@ namespace VehiculeNeufOccasion
             this.Controls.Add(this.cbxAnnee);
             this.Controls.Add(this.cbxModele);
             this.Controls.Add(this.cbxMarque);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAcheter";
             this.Text = "Acheter un véhicule";
             this.ResumeLayout(false);

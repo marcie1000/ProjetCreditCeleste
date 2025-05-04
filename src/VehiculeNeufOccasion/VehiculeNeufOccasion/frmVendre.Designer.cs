@@ -29,9 +29,7 @@ namespace VehiculeNeufOccasion
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmdRetour = new System.Windows.Forms.Button();
             this.listViewVehicules = new System.Windows.Forms.ListView();
-            this.lblMessage = new System.Windows.Forms.Label();
             this.Marque = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Modèle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Année = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,17 +39,9 @@ namespace VehiculeNeufOccasion
             this.Couleur = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Carburant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.État = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.btnVendre = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // cmdRetour
-            // 
-            this.cmdRetour.Location = new System.Drawing.Point(796, 468);
-            this.cmdRetour.Name = "cmdRetour";
-            this.cmdRetour.Size = new System.Drawing.Size(75, 23);
-            this.cmdRetour.TabIndex = 24;
-            this.cmdRetour.Text = "Retour";
-            this.cmdRetour.UseVisualStyleBackColor = true;
-            this.cmdRetour.Click += new System.EventHandler(this.cmdRetour_Click);
             // 
             // listViewVehicules
             // 
@@ -65,23 +55,16 @@ namespace VehiculeNeufOccasion
             this.Couleur,
             this.Carburant,
             this.État});
+            this.listViewVehicules.FullRowSelect = true;
+            this.listViewVehicules.GridLines = true;
             this.listViewVehicules.HideSelection = false;
             this.listViewVehicules.Location = new System.Drawing.Point(21, 23);
+            this.listViewVehicules.MultiSelect = false;
             this.listViewVehicules.Name = "listViewVehicules";
-            this.listViewVehicules.Size = new System.Drawing.Size(862, 367);
+            this.listViewVehicules.Size = new System.Drawing.Size(997, 479);
             this.listViewVehicules.TabIndex = 25;
             this.listViewVehicules.UseCompatibleStateImageBehavior = false;
             this.listViewVehicules.View = System.Windows.Forms.View.Details;
-            // 
-            // lblMessage
-            // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.Location = new System.Drawing.Point(21, 403);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(77, 20);
-            this.lblMessage.TabIndex = 26;
-            this.lblMessage.Text = "Message";
             // 
             // Marque
             // 
@@ -123,15 +106,40 @@ namespace VehiculeNeufOccasion
             // 
             this.État.Text = "État";
             // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.Location = new System.Drawing.Point(17, 517);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(77, 20);
+            this.lblMessage.TabIndex = 26;
+            this.lblMessage.Text = "Message";
+            // 
+            // btnVendre
+            // 
+            this.btnVendre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVendre.Location = new System.Drawing.Point(743, 548);
+            this.btnVendre.Name = "btnVendre";
+            this.btnVendre.Size = new System.Drawing.Size(145, 44);
+            this.btnVendre.TabIndex = 27;
+            this.btnVendre.Text = "&Vendre...";
+            this.btnVendre.UseVisualStyleBackColor = true;
+            this.btnVendre.Click += new System.EventHandler(this.btnVendre_Click);
+            // 
             // frmVendre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 523);
+            this.ClientSize = new System.Drawing.Size(1120, 615);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnVendre);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.listViewVehicules);
-            this.Controls.Add(this.cmdRetour);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVendre";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Revendre un véhicule";
             this.Shown += new System.EventHandler(this.frmVendre_Shown);
             this.ResumeLayout(false);
@@ -140,7 +148,6 @@ namespace VehiculeNeufOccasion
         }
 
         #endregion
-        private System.Windows.Forms.Button cmdRetour;
         private System.Windows.Forms.ListView listViewVehicules;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.ColumnHeader Marque;
@@ -152,5 +159,6 @@ namespace VehiculeNeufOccasion
         private System.Windows.Forms.ColumnHeader Couleur;
         private System.Windows.Forms.ColumnHeader Carburant;
         private System.Windows.Forms.ColumnHeader État;
+        private System.Windows.Forms.Button btnVendre;
     }
 }

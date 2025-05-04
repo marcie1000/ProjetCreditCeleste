@@ -122,6 +122,7 @@ namespace VehiculeNeufOccasion
             this.Controls.Add(this.txtMdp);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCreationUser";
             this.Text = "frmCreationUser";
             this.ResumeLayout(false);

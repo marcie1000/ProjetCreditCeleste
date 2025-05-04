@@ -53,5 +53,16 @@ namespace VehiculeNeufOccasion
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnVendre_Click(object sender, EventArgs e)
+        {
+            if (listViewVehicules.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Veuillez sélectionner un véhicule !");
+                return;
+            }
+            Globales.vehiculeSelectionne = Globales.Vehicules[listViewVehicules.SelectedItems[0].Index];
+            
+        }
     }
 }
