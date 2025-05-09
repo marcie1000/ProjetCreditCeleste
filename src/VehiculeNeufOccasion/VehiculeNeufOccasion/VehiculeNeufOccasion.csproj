@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClSuiteDeFenetres.cs" />
     <Compile Include="ClassesDonnees\Achat.cs" />
     <Compile Include="ClassesDonnees\AgenceCreditCeleste.cs" />
     <Compile Include="Bdd.cs" />
@@ -93,11 +94,23 @@
     <Compile Include="frmCreationUser.Designer.cs">
       <DependentUpon>frmCreationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConnexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConnexion.Designer.cs">
+      <DependentUpon>frmConnexion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLouer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLouer.Designer.cs">
       <DependentUpon>frmLouer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProposerCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProposerCredit.Designer.cs">
+      <DependentUpon>frmProposerCredit.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVendre.cs">
       <SubType>Form</SubType>
@@ -134,8 +147,14 @@
     <EmbeddedResource Include="frmCreationUser.resx">
       <DependentUpon>frmCreationUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConnexion.resx">
+      <DependentUpon>frmConnexion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLouer.resx">
       <DependentUpon>frmLouer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProposerCredit.resx">
+      <DependentUpon>frmProposerCredit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVendre.resx">
       <DependentUpon>frmVendre.cs</DependentUpon>

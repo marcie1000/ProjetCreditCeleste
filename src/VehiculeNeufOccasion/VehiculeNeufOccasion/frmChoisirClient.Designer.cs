@@ -41,7 +41,8 @@ namespace VehiculeNeufOccasion
             this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
             this.btnChoisir = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCreer = new System.Windows.Forms.Button();
+            this.btnRetour = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -146,30 +147,43 @@ namespace VehiculeNeufOccasion
             // btnChoisir
             // 
             this.btnChoisir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChoisir.Location = new System.Drawing.Point(455, 572);
+            this.btnChoisir.Location = new System.Drawing.Point(431, 562);
             this.btnChoisir.Name = "btnChoisir";
-            this.btnChoisir.Size = new System.Drawing.Size(242, 51);
+            this.btnChoisir.Size = new System.Drawing.Size(266, 64);
             this.btnChoisir.TabIndex = 8;
             this.btnChoisir.Text = "Choisir ce client";
             this.btnChoisir.UseVisualStyleBackColor = true;
             this.btnChoisir.Click += new System.EventHandler(this.btnChoisir_Click);
             // 
-            // button1
+            // btnCreer
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(739, 572);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(242, 51);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "➕ Créer un nouveau client...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCreer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreer.Location = new System.Drawing.Point(715, 562);
+            this.btnCreer.Name = "btnCreer";
+            this.btnCreer.Size = new System.Drawing.Size(266, 64);
+            this.btnCreer.TabIndex = 9;
+            this.btnCreer.Text = "➕ Créer un nouveau client...";
+            this.btnCreer.UseVisualStyleBackColor = true;
+            this.btnCreer.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnRetour
+            // 
+            this.btnRetour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRetour.Location = new System.Drawing.Point(19, 562);
+            this.btnRetour.Name = "btnRetour";
+            this.btnRetour.Size = new System.Drawing.Size(266, 64);
+            this.btnRetour.TabIndex = 10;
+            this.btnRetour.Text = "< Retour";
+            this.btnRetour.UseVisualStyleBackColor = true;
+            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
             // 
             // frmChoisirClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 648);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRetour);
+            this.Controls.Add(this.btnCreer);
             this.Controls.Add(this.btnChoisir);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.listView1);
@@ -179,9 +193,11 @@ namespace VehiculeNeufOccasion
             this.Controls.Add(this.txtPrenom);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmChoisirClient";
             this.Text = "Choisir un client";
+            this.Load += new System.EventHandler(this.frmChoisirClient_Load);
+            this.Shown += new System.EventHandler(this.frmChoisirClient_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,6 +217,7 @@ namespace VehiculeNeufOccasion
         private System.Windows.Forms.ColumnHeader Email;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnChoisir;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCreer;
+        private System.Windows.Forms.Button btnRetour;
     }
 }
