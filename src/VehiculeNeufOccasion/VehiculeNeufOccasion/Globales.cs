@@ -11,9 +11,10 @@ namespace VehiculeNeufOccasion
     static class Globales
     {
         public static frmAccueil fenAccueil;
+        public static Panel panelConteneurAcceuil;
         // chaîne de fenêtres actuellement dans le conteneur de fenAccueil
         // la liste permet de faire "Retour"
-        public static List<Form> fenetresConteneur = new List<Form>(); 
+        public static ClSuiteDeFenetres suiteFenetres = new ClSuiteDeFenetres();
         //public const string adresseSqlServer = "192.168.43.130";
         public static int idGarage = 1;
         public static Garage LeGarage;
@@ -27,6 +28,7 @@ namespace VehiculeNeufOccasion
         public static Dictionary<int, Personne> Personnes = new Dictionary<int, Personne>();
         public static Dictionary<int, Client> ClientsRecherche = new Dictionary<int, Client>();
         public static Client clientSelectionne;
-        public static Vehicule vehiculeSelectionne;
+        public static Vehicule vehiculeSelectionneVente;
+        public static decimal prixTotalAFinancer;
     }
 }

@@ -17,78 +17,125 @@ namespace VehiculeNeufOccasion
             InitializeComponent();
         }
 
-        public void fermerDerniereFenetrePileConteneur()
-        {
-            panelConteneur.Controls.Clear();
-            Globales.fenetresConteneur.Last().Close();
-            Globales.fenetresConteneur.RemoveAt(Globales.fenetresConteneur.Count - 1);
-            panelConteneur.Controls.Add(Globales.fenetresConteneur.Last());
-        }
+        //public void fermerDerniereFenetrePileConteneur()
+        //{
+        //    panelConteneur.Controls.Clear();
+        //    Globales.fenetresConteneur.Last().Close();
+        //    Globales.fenetresConteneur.RemoveAt(Globales.fenetresConteneur.Count - 1);
+        //    panelConteneur.Controls.Add(Globales.fenetresConteneur.Last());
+        //}
 
-        public void ajouterFenetrePileConteneur(Form fenetre)
-        {
-            Globales.fenetresConteneur.Add(fenetre);
-            panelConteneur.Controls.Clear();
-            panelConteneur.Controls.Add(fenetre);
-            fenetre.Show();
-            this.Text = fenetre.Text;
-        }
+        //public void ajouterFenetrePileConteneur(Form fenetre)
+        //{
+        //    Globales.fenetresConteneur.Add(fenetre);
+        //    panelConteneur.Controls.Clear();
+        //    panelConteneur.Controls.Add(fenetre);
+        //    fenetre.Show();
+        //    this.Text = fenetre.Text;
+        //}
 
         /// <summary>
         /// Permet d'afficher une nouvelle fenêtre dans le conteneur de frmAccueil et de fermer l'ancienne affichée.
         /// </summary>
         /// <param name="fenetre"></param>
-        public void changerFenetreDeBaseConteneur(Form fenetre)
-        {
-            // supprimer l'ancienne fenêtre du conteneur
-            panelConteneur.Controls.Clear();
+        //public void changerFenetreDeBaseConteneur(Form fenetre)
+        //{
+        //    // supprimer l'ancienne fenêtre du conteneur
+        //    panelConteneur.Controls.Clear();
             
-            // fermer l'ancienne fenêtre
-            for(int i = 0; i < Globales.fenetresConteneur.Count; i++)
-            {
-                Globales.fenetresConteneur.Last().Close();
-            }
+        //    // fermer l'ancienne fenêtre
+        //    for(int i = 0; i < Globales.fenetresConteneur.Count; i++)
+        //    {
+        //        Globales.fenetresConteneur.Last().Close();
+        //    }
 
-            Globales.fenetresConteneur.Clear();
+        //    Globales.fenetresConteneur.Clear();
 
-            // enregistrer dans Globales
-            Globales.fenetresConteneur.Add(fenetre);
+        //    // enregistrer dans Globales
+        //    Globales.fenetresConteneur.Add(fenetre);
 
-            // afficher dans le conteneur
-            fenetre.Parent = this;
-            panelConteneur.Controls.Add(fenetre);
-            fenetre.Show();
-            this.Text = fenetre.Text;
-        }
+        //    // afficher dans le conteneur
+        //    fenetre.Parent = this;
+        //    panelConteneur.Controls.Add(fenetre);
+        //    fenetre.Show();
+        //    this.Text = "Crédit Céleste - " + fenetre.Text;
+        //}
 
         private void cmdAcheter_Click(object sender, EventArgs e)
         {
-            frmAcheter nouvelleFen = new frmAcheter() { TopLevel = false, TopMost = true };
-            changerFenetreDeBaseConteneur(nouvelleFen);
+            try
+            {
+                frmAcheter nouvelleFen = new frmAcheter() { TopLevel = false, TopMost = true };
+                Globales.suiteFenetres.resetSuiteFenetres(this.panelConteneur, this);
+                Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, nouvelleFen);
+                Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmdRevendre_Click(object sender, EventArgs e)
         {
-            frmVendre nouvelleFen = new frmVendre() { TopLevel = false, TopMost = true };
-            changerFenetreDeBaseConteneur(nouvelleFen);
-            //this.Hide();  // masquer la fenêtre, l'objet courant 
+            try 
+            { 
+                frmVendre nouvelleFen = new frmVendre() { TopLevel = false, TopMost = true };
+                Globales.suiteFenetres.resetSuiteFenetres(this.panelConteneur, this);
+                Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, nouvelleFen);
+                Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmdLouer_Click(object sender, EventArgs e)
         {
-            frmLouer nouvelleFen = new frmLouer() { TopLevel = false, TopMost = true };
-            changerFenetreDeBaseConteneur(nouvelleFen);
+            try
+            {
+                frmLouer nouvelleFen = new frmLouer() { TopLevel = false, TopMost = true };
+                Globales.suiteFenetres.resetSuiteFenetres(this.panelConteneur, this);
+                Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, nouvelleFen);
+                Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCreerUser_Click(object sender, EventArgs e)
         {
-            frmCreationUser nouvelleFen = new frmCreationUser() { TopLevel = false, TopMost = true };
-            changerFenetreDeBaseConteneur(nouvelleFen);
+            try
+            {
+                frmCreationUser nouvelleFen = new frmCreationUser() { TopLevel = false, TopMost = true };
+                Globales.suiteFenetres.resetSuiteFenetres(this.panelConteneur, this);
+                Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, nouvelleFen);
+                Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void frmAccueil_Load(object sender, EventArgs e)
         {
-            
+            try
+            {
+                frmConnexion nouvelleFen = new frmConnexion() { TopLevel = false, TopMost = true };
+                Globales.suiteFenetres.resetSuiteFenetres(this.panelConteneur, this);
+                Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, nouvelleFen);
+                Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Globales.panelConteneurAcceuil = this.panelConteneur;
         }
 
     }

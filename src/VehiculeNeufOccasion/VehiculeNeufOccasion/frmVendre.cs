@@ -61,9 +61,28 @@ namespace VehiculeNeufOccasion
                 MessageBox.Show("Veuillez sélectionner un véhicule !");
                 return;
             }
-            Globales.vehiculeSelectionne = Globales.Vehicules.Values.ToList()[listViewVehicules.SelectedItems[0].Index];
-            frmChoisirClient fenChoisirClient = new frmChoisirClient();
-            fenChoisirClient.ShowDialog();
+            Globales.vehiculeSelectionneVente = Globales.Vehicules.Values.ToList()[listViewVehicules.SelectedItems[0].Index];
+
+
+            try
+            {
+                // Ajouter dans la liste des fenêtres les fenêtres suivantes
+                // Sauf si elles existent déjà (dans le cas où on a fait retour)
+                if(Globales.suiteFenetres.getIndexFenetreActuelle() == Globales.suiteFenetres.listeFenetres.Count - 1)
+                {
+                    frmChoisirClient fenChoisirClient = new frmChoisirClient() { TopLevel = false, TopMost = true };
+                    Globales.suiteFenetres.ajouterFenetre(Globales.panelConteneurAcceuil, Globales.fenAccueil, fenChoisirClient);
+                    frmAcheter fenAcheter = new frmAcheter() { TopLevel = false, TopMost = true };
+                    Globales.suiteFenetres.ajouterFenetre(Globales.panelConteneurAcceuil, Globales.fenAccueil, fenAcheter);
+                    frmProposerCredit fenProposerCredit = new frmProposerCredit() { TopLevel = false, TopMost = true };
+                    Globales.suiteFenetres.ajouterFenetre(Globales.panelConteneurAcceuil, Globales.fenAccueil, fenProposerCredit);
+                }
+                Globales.suiteFenetres.afficherFenetreSuivante(Globales.panelConteneurAcceuil, Globales.fenAccueil);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             
         }
     }

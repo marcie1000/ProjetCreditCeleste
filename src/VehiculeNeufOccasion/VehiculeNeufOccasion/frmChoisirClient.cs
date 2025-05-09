@@ -42,7 +42,46 @@ namespace VehiculeNeufOccasion
             }
 
             Globales.clientSelectionne = Globales.ClientsRecherche.Values.ToList()[listView1.SelectedIndices[0]];
-            this.Close();
+
+            try
+            {
+                Globales.suiteFenetres.afficherFenetreSuivante(Globales.panelConteneurAcceuil, Globales.fenAccueil);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Globales.suiteFenetres.afficherFenetrePrecedente(Globales.panelConteneurAcceuil, Globales.fenAccueil);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void frmChoisirClient_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmChoisirClient_Shown(object sender, EventArgs e)
+        {
+            if (Globales.suiteFenetres.getIndexFenetreActuelle() > 0)
+                btnRetour.Enabled = true;
+            else
+                btnRetour.Enabled = false;
         }
     }
 }
