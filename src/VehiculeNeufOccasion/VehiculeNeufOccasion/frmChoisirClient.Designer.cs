@@ -1,5 +1,4 @@
-﻿
-namespace VehiculeNeufOccasion
+﻿namespace VehiculeNeufOccasion
 {
     partial class frmChoisirClient
     {
@@ -43,41 +42,46 @@ namespace VehiculeNeufOccasion
             this.btnChoisir = new System.Windows.Forms.Button();
             this.btnCreer = new System.Windows.Forms.Button();
             this.btnRetour = new System.Windows.Forms.Button();
+            this.btnClientTemporaire = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(297, 47);
+            this.label1.Location = new System.Drawing.Point(428, 71);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(413, 25);
+            this.label1.Size = new System.Drawing.Size(599, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Rechercher un client dans la base de données";
             // 
             // txtNom
             // 
             this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(245, 118);
+            this.txtNom.Location = new System.Drawing.Point(357, 178);
+            this.txtNom.Margin = new System.Windows.Forms.Padding(4);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(242, 27);
+            this.txtNom.Size = new System.Drawing.Size(331, 34);
             this.txtNom.TabIndex = 1;
             // 
             // txtPrenom
             // 
             this.txtPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrenom.Location = new System.Drawing.Point(513, 118);
+            this.txtPrenom.Location = new System.Drawing.Point(725, 178);
+            this.txtPrenom.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrenom.Name = "txtPrenom";
-            this.txtPrenom.Size = new System.Drawing.Size(242, 27);
+            this.txtPrenom.Size = new System.Drawing.Size(331, 34);
             this.txtPrenom.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(241, 95);
+            this.label2.Location = new System.Drawing.Point(351, 143);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 20);
+            this.label2.Size = new System.Drawing.Size(65, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nom";
             // 
@@ -85,18 +89,20 @@ namespace VehiculeNeufOccasion
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(509, 95);
+            this.label3.Location = new System.Drawing.Point(720, 143);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 20);
+            this.label3.Size = new System.Drawing.Size(98, 29);
             this.label3.TabIndex = 4;
             this.label3.Text = "Prénom";
             // 
             // btnRechercher
             // 
             this.btnRechercher.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRechercher.Location = new System.Drawing.Point(391, 170);
+            this.btnRechercher.Location = new System.Drawing.Point(558, 256);
+            this.btnRechercher.Margin = new System.Windows.Forms.Padding(4);
             this.btnRechercher.Name = "btnRechercher";
-            this.btnRechercher.Size = new System.Drawing.Size(242, 51);
+            this.btnRechercher.Size = new System.Drawing.Size(333, 76);
             this.btnRechercher.TabIndex = 5;
             this.btnRechercher.Text = "Rechercher";
             this.btnRechercher.UseVisualStyleBackColor = true;
@@ -111,10 +117,11 @@ namespace VehiculeNeufOccasion
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 284);
+            this.listView1.Location = new System.Drawing.Point(36, 427);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(969, 255);
+            this.listView1.Size = new System.Drawing.Size(1331, 380);
             this.listView1.TabIndex = 6;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -138,18 +145,20 @@ namespace VehiculeNeufOccasion
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(386, 253);
+            this.label4.Location = new System.Drawing.Point(551, 381);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(211, 25);
+            this.label4.Size = new System.Drawing.Size(306, 32);
             this.label4.TabIndex = 7;
             this.label4.Text = "Résultats de recherche";
             // 
             // btnChoisir
             // 
             this.btnChoisir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChoisir.Location = new System.Drawing.Point(431, 562);
+            this.btnChoisir.Location = new System.Drawing.Point(613, 844);
+            this.btnChoisir.Margin = new System.Windows.Forms.Padding(4);
             this.btnChoisir.Name = "btnChoisir";
-            this.btnChoisir.Size = new System.Drawing.Size(266, 64);
+            this.btnChoisir.Size = new System.Drawing.Size(366, 96);
             this.btnChoisir.TabIndex = 8;
             this.btnChoisir.Text = "Choisir ce client";
             this.btnChoisir.UseVisualStyleBackColor = true;
@@ -158,9 +167,10 @@ namespace VehiculeNeufOccasion
             // btnCreer
             // 
             this.btnCreer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreer.Location = new System.Drawing.Point(715, 562);
+            this.btnCreer.Location = new System.Drawing.Point(1003, 844);
+            this.btnCreer.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreer.Name = "btnCreer";
-            this.btnCreer.Size = new System.Drawing.Size(266, 64);
+            this.btnCreer.Size = new System.Drawing.Size(366, 96);
             this.btnCreer.TabIndex = 9;
             this.btnCreer.Text = "➕ Créer un nouveau client...";
             this.btnCreer.UseVisualStyleBackColor = true;
@@ -169,19 +179,33 @@ namespace VehiculeNeufOccasion
             // btnRetour
             // 
             this.btnRetour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRetour.Location = new System.Drawing.Point(19, 562);
+            this.btnRetour.Location = new System.Drawing.Point(46, 844);
+            this.btnRetour.Margin = new System.Windows.Forms.Padding(4);
             this.btnRetour.Name = "btnRetour";
-            this.btnRetour.Size = new System.Drawing.Size(266, 64);
+            this.btnRetour.Size = new System.Drawing.Size(366, 96);
             this.btnRetour.TabIndex = 10;
             this.btnRetour.Text = "< Retour";
             this.btnRetour.UseVisualStyleBackColor = true;
             this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
             // 
+            // btnClientTemporaire
+            // 
+            this.btnClientTemporaire.Enabled = false;
+            this.btnClientTemporaire.Location = new System.Drawing.Point(46, 951);
+            this.btnClientTemporaire.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClientTemporaire.Name = "btnClientTemporaire";
+            this.btnClientTemporaire.Size = new System.Drawing.Size(366, 96);
+            this.btnClientTemporaire.TabIndex = 11;
+            this.btnClientTemporaire.Text = "Utiliser client provisoire";
+            this.btnClientTemporaire.UseVisualStyleBackColor = true;
+            this.btnClientTemporaire.Click += new System.EventHandler(this.btnClientTemporaire_Click);
+            // 
             // frmChoisirClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 648);
+            this.ClientSize = new System.Drawing.Size(1420, 1100);
+            this.Controls.Add(this.btnClientTemporaire);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.btnCreer);
             this.Controls.Add(this.btnChoisir);
@@ -194,6 +218,9 @@ namespace VehiculeNeufOccasion
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1420, 1100);
+            this.MinimumSize = new System.Drawing.Size(1420, 1100);
             this.Name = "frmChoisirClient";
             this.Text = "Choisir un client";
             this.Load += new System.EventHandler(this.frmChoisirClient_Load);
@@ -219,5 +246,6 @@ namespace VehiculeNeufOccasion
         private System.Windows.Forms.Button btnChoisir;
         private System.Windows.Forms.Button btnCreer;
         private System.Windows.Forms.Button btnRetour;
+        private System.Windows.Forms.Button btnClientTemporaire;
     }
 }

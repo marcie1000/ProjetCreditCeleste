@@ -68,9 +68,10 @@ namespace VehiculeNeufOccasion
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(454, 25);
+            this.label1.Location = new System.Drawing.Point(624, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 25);
+            this.label1.Size = new System.Drawing.Size(246, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Proposer un crédit";
             // 
@@ -79,9 +80,11 @@ namespace VehiculeNeufOccasion
             this.groupBoxChoix.Controls.Add(this.rdbPasDeCredit);
             this.groupBoxChoix.Controls.Add(this.rdbSouscrire);
             this.groupBoxChoix.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxChoix.Location = new System.Drawing.Point(71, 71);
+            this.groupBoxChoix.Location = new System.Drawing.Point(98, 106);
+            this.groupBoxChoix.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxChoix.Name = "groupBoxChoix";
-            this.groupBoxChoix.Size = new System.Drawing.Size(966, 65);
+            this.groupBoxChoix.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxChoix.Size = new System.Drawing.Size(1328, 98);
             this.groupBoxChoix.TabIndex = 2;
             this.groupBoxChoix.TabStop = false;
             this.groupBoxChoix.Text = "Choix";
@@ -89,9 +92,10 @@ namespace VehiculeNeufOccasion
             // rdbPasDeCredit
             // 
             this.rdbPasDeCredit.AutoSize = true;
-            this.rdbPasDeCredit.Location = new System.Drawing.Point(551, 26);
+            this.rdbPasDeCredit.Location = new System.Drawing.Point(758, 39);
+            this.rdbPasDeCredit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdbPasDeCredit.Name = "rdbPasDeCredit";
-            this.rdbPasDeCredit.Size = new System.Drawing.Size(382, 24);
+            this.rdbPasDeCredit.Size = new System.Drawing.Size(533, 33);
             this.rdbPasDeCredit.TabIndex = 1;
             this.rdbPasDeCredit.TabStop = true;
             this.rdbPasDeCredit.Text = "Le client ne souhaite PAS souscrire à un crédit";
@@ -100,9 +104,10 @@ namespace VehiculeNeufOccasion
             // rdbSouscrire
             // 
             this.rdbSouscrire.AutoSize = true;
-            this.rdbSouscrire.Location = new System.Drawing.Point(24, 26);
+            this.rdbSouscrire.Location = new System.Drawing.Point(33, 39);
+            this.rdbSouscrire.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdbSouscrire.Name = "rdbSouscrire";
-            this.rdbSouscrire.Size = new System.Drawing.Size(307, 24);
+            this.rdbSouscrire.Size = new System.Drawing.Size(428, 33);
             this.rdbSouscrire.TabIndex = 0;
             this.rdbSouscrire.TabStop = true;
             this.rdbSouscrire.Text = "Le client souhaite souscrire un crédit";
@@ -112,9 +117,10 @@ namespace VehiculeNeufOccasion
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(71, 161);
+            this.label2.Location = new System.Drawing.Point(98, 242);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 20);
+            this.label2.Size = new System.Drawing.Size(245, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Prix total du véhicule :";
             // 
@@ -122,9 +128,10 @@ namespace VehiculeNeufOccasion
             // 
             this.lblPrixTotalVehicule.AutoSize = true;
             this.lblPrixTotalVehicule.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrixTotalVehicule.Location = new System.Drawing.Point(275, 161);
+            this.lblPrixTotalVehicule.Location = new System.Drawing.Point(378, 242);
+            this.lblPrixTotalVehicule.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrixTotalVehicule.Name = "lblPrixTotalVehicule";
-            this.lblPrixTotalVehicule.Size = new System.Drawing.Size(32, 20);
+            this.lblPrixTotalVehicule.Size = new System.Drawing.Size(45, 29);
             this.lblPrixTotalVehicule.TabIndex = 4;
             this.lblPrixTotalVehicule.Text = "0 €";
             // 
@@ -132,9 +139,10 @@ namespace VehiculeNeufOccasion
             // 
             this.lblMontantRachat.AutoSize = true;
             this.lblMontantRachat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMontantRachat.Location = new System.Drawing.Point(275, 191);
+            this.lblMontantRachat.Location = new System.Drawing.Point(378, 286);
+            this.lblMontantRachat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMontantRachat.Name = "lblMontantRachat";
-            this.lblMontantRachat.Size = new System.Drawing.Size(32, 20);
+            this.lblMontantRachat.Size = new System.Drawing.Size(45, 29);
             this.lblMontantRachat.TabIndex = 6;
             this.lblMontantRachat.Text = "0 €";
             // 
@@ -142,9 +150,10 @@ namespace VehiculeNeufOccasion
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(60, 191);
+            this.label5.Location = new System.Drawing.Point(82, 286);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(165, 20);
+            this.label5.Size = new System.Drawing.Size(228, 29);
             this.label5.TabIndex = 5;
             this.label5.Text = "- Montant du rachat :";
             // 
@@ -152,9 +161,10 @@ namespace VehiculeNeufOccasion
             // 
             this.lblPrixTotal.AutoSize = true;
             this.lblPrixTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrixTotal.Location = new System.Drawing.Point(275, 222);
+            this.lblPrixTotal.Location = new System.Drawing.Point(378, 333);
+            this.lblPrixTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrixTotal.Name = "lblPrixTotal";
-            this.lblPrixTotal.Size = new System.Drawing.Size(35, 20);
+            this.lblPrixTotal.Size = new System.Drawing.Size(48, 29);
             this.lblPrixTotal.TabIndex = 8;
             this.lblPrixTotal.Text = "0 €";
             // 
@@ -162,27 +172,30 @@ namespace VehiculeNeufOccasion
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(53, 222);
+            this.label7.Location = new System.Drawing.Point(73, 333);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(187, 20);
+            this.label7.Size = new System.Drawing.Size(254, 29);
             this.label7.TabIndex = 7;
             this.label7.Text = "= TOTAL à financer :";
             // 
             // dateTimePickerDebut
             // 
             this.dateTimePickerDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDebut.Location = new System.Drawing.Point(480, 191);
+            this.dateTimePickerDebut.Location = new System.Drawing.Point(660, 286);
+            this.dateTimePickerDebut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePickerDebut.Name = "dateTimePickerDebut";
-            this.dateTimePickerDebut.Size = new System.Drawing.Size(292, 27);
+            this.dateTimePickerDebut.Size = new System.Drawing.Size(400, 34);
             this.dateTimePickerDebut.TabIndex = 9;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(476, 168);
+            this.label8.Location = new System.Drawing.Point(654, 252);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(124, 20);
+            this.label8.Size = new System.Drawing.Size(176, 29);
             this.label8.TabIndex = 10;
             this.label8.Text = "Date de début :";
             // 
@@ -190,9 +203,10 @@ namespace VehiculeNeufOccasion
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(476, 321);
+            this.label9.Location = new System.Drawing.Point(654, 482);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(196, 20);
+            this.label9.Size = new System.Drawing.Size(282, 29);
             this.label9.TabIndex = 12;
             this.label9.Text = "Nombre de mensualités :";
             // 
@@ -200,9 +214,10 @@ namespace VehiculeNeufOccasion
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(476, 391);
+            this.label10.Location = new System.Drawing.Point(654, 586);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(232, 20);
+            this.label10.Size = new System.Drawing.Size(326, 29);
             this.label10.TabIndex = 14;
             this.label10.Text = "Montant des mensualités (€) :";
             // 
@@ -210,9 +225,10 @@ namespace VehiculeNeufOccasion
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(476, 242);
+            this.label11.Location = new System.Drawing.Point(654, 363);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 20);
+            this.label11.Size = new System.Drawing.Size(122, 29);
             this.label11.TabIndex = 16;
             this.label11.Text = "Taux (%) :";
             // 
@@ -220,18 +236,20 @@ namespace VehiculeNeufOccasion
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(476, 457);
+            this.label12.Location = new System.Drawing.Point(654, 686);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(156, 20);
+            this.label12.Size = new System.Drawing.Size(221, 29);
             this.label12.TabIndex = 18;
             this.label12.Text = "Premier apport (€) :";
             // 
             // cb1_NbMensualités
             // 
             this.cb1_NbMensualités.AutoSize = true;
-            this.cb1_NbMensualités.Location = new System.Drawing.Point(28, 50);
+            this.cb1_NbMensualités.Location = new System.Drawing.Point(38, 75);
+            this.cb1_NbMensualités.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb1_NbMensualités.Name = "cb1_NbMensualités";
-            this.cb1_NbMensualités.Size = new System.Drawing.Size(18, 17);
+            this.cb1_NbMensualités.Size = new System.Drawing.Size(22, 21);
             this.cb1_NbMensualités.TabIndex = 19;
             this.cb1_NbMensualités.UseVisualStyleBackColor = true;
             this.cb1_NbMensualités.CheckedChanged += new System.EventHandler(this.cb1_NbMensualités_CheckedChanged);
@@ -242,9 +260,11 @@ namespace VehiculeNeufOccasion
             this.groupBox1.Controls.Add(this.cb2_MontantMensualites);
             this.groupBox1.Controls.Add(this.cb1_NbMensualités);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(379, 298);
+            this.groupBox1.Location = new System.Drawing.Point(521, 447);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(76, 228);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(104, 342);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manuel";
@@ -254,9 +274,10 @@ namespace VehiculeNeufOccasion
             this.cb3_PremierApport.AutoSize = true;
             this.cb3_PremierApport.Checked = true;
             this.cb3_PremierApport.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb3_PremierApport.Location = new System.Drawing.Point(28, 179);
+            this.cb3_PremierApport.Location = new System.Drawing.Point(38, 268);
+            this.cb3_PremierApport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb3_PremierApport.Name = "cb3_PremierApport";
-            this.cb3_PremierApport.Size = new System.Drawing.Size(18, 17);
+            this.cb3_PremierApport.Size = new System.Drawing.Size(22, 21);
             this.cb3_PremierApport.TabIndex = 22;
             this.cb3_PremierApport.UseVisualStyleBackColor = true;
             this.cb3_PremierApport.CheckedChanged += new System.EventHandler(this.cb3_PremierApport_CheckedChanged);
@@ -266,9 +287,10 @@ namespace VehiculeNeufOccasion
             this.cb2_MontantMensualites.AutoSize = true;
             this.cb2_MontantMensualites.Checked = true;
             this.cb2_MontantMensualites.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb2_MontantMensualites.Location = new System.Drawing.Point(28, 119);
+            this.cb2_MontantMensualites.Location = new System.Drawing.Point(38, 178);
+            this.cb2_MontantMensualites.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb2_MontantMensualites.Name = "cb2_MontantMensualites";
-            this.cb2_MontantMensualites.Size = new System.Drawing.Size(18, 17);
+            this.cb2_MontantMensualites.Size = new System.Drawing.Size(22, 21);
             this.cb2_MontantMensualites.TabIndex = 20;
             this.cb2_MontantMensualites.UseVisualStyleBackColor = true;
             this.cb2_MontantMensualites.CheckedChanged += new System.EventHandler(this.cb2_MontantMensualites_CheckedChanged);
@@ -276,9 +298,10 @@ namespace VehiculeNeufOccasion
             // btnRetour
             // 
             this.btnRetour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRetour.Location = new System.Drawing.Point(23, 553);
+            this.btnRetour.Location = new System.Drawing.Point(32, 830);
+            this.btnRetour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRetour.Name = "btnRetour";
-            this.btnRetour.Size = new System.Drawing.Size(246, 60);
+            this.btnRetour.Size = new System.Drawing.Size(338, 90);
             this.btnRetour.TabIndex = 21;
             this.btnRetour.Text = "< Retour";
             this.btnRetour.UseVisualStyleBackColor = true;
@@ -287,9 +310,10 @@ namespace VehiculeNeufOccasion
             // btnContinuer
             // 
             this.btnContinuer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinuer.Location = new System.Drawing.Point(833, 553);
+            this.btnContinuer.Location = new System.Drawing.Point(1145, 830);
+            this.btnContinuer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnContinuer.Name = "btnContinuer";
-            this.btnContinuer.Size = new System.Drawing.Size(246, 60);
+            this.btnContinuer.Size = new System.Drawing.Size(338, 90);
             this.btnContinuer.TabIndex = 22;
             this.btnContinuer.Text = "Continuer >";
             this.btnContinuer.UseVisualStyleBackColor = true;
@@ -298,9 +322,10 @@ namespace VehiculeNeufOccasion
             // btnCalculer
             // 
             this.btnCalculer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalculer.Location = new System.Drawing.Point(480, 553);
+            this.btnCalculer.Location = new System.Drawing.Point(660, 830);
+            this.btnCalculer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCalculer.Name = "btnCalculer";
-            this.btnCalculer.Size = new System.Drawing.Size(246, 60);
+            this.btnCalculer.Size = new System.Drawing.Size(338, 90);
             this.btnCalculer.TabIndex = 23;
             this.btnCalculer.Text = "Calculer";
             this.btnCalculer.UseVisualStyleBackColor = true;
@@ -310,27 +335,29 @@ namespace VehiculeNeufOccasion
             // 
             this.numNbMensualites.Enabled = false;
             this.numNbMensualites.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numNbMensualites.Location = new System.Drawing.Point(480, 344);
+            this.numNbMensualites.Location = new System.Drawing.Point(660, 516);
+            this.numNbMensualites.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numNbMensualites.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
             this.numNbMensualites.Name = "numNbMensualites";
-            this.numNbMensualites.Size = new System.Drawing.Size(292, 27);
+            this.numNbMensualites.Size = new System.Drawing.Size(402, 34);
             this.numNbMensualites.TabIndex = 24;
             // 
             // numMontantMensualites
             // 
             this.numMontantMensualites.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numMontantMensualites.Location = new System.Drawing.Point(480, 414);
+            this.numMontantMensualites.Location = new System.Drawing.Point(660, 621);
+            this.numMontantMensualites.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numMontantMensualites.Maximum = new decimal(new int[] {
             500000,
             0,
             0,
             0});
             this.numMontantMensualites.Name = "numMontantMensualites";
-            this.numMontantMensualites.Size = new System.Drawing.Size(292, 27);
+            this.numMontantMensualites.Size = new System.Drawing.Size(402, 34);
             this.numMontantMensualites.TabIndex = 25;
             // 
             // numTaux
@@ -341,9 +368,10 @@ namespace VehiculeNeufOccasion
             0,
             0,
             196608});
-            this.numTaux.Location = new System.Drawing.Point(480, 265);
+            this.numTaux.Location = new System.Drawing.Point(660, 398);
+            this.numTaux.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numTaux.Name = "numTaux";
-            this.numTaux.Size = new System.Drawing.Size(292, 27);
+            this.numTaux.Size = new System.Drawing.Size(402, 34);
             this.numTaux.TabIndex = 26;
             this.numTaux.Value = new decimal(new int[] {
             15,
@@ -354,21 +382,22 @@ namespace VehiculeNeufOccasion
             // numPremierApport
             // 
             this.numPremierApport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numPremierApport.Location = new System.Drawing.Point(480, 480);
+            this.numPremierApport.Location = new System.Drawing.Point(660, 720);
+            this.numPremierApport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numPremierApport.Maximum = new decimal(new int[] {
             500000,
             0,
             0,
             0});
             this.numPremierApport.Name = "numPremierApport";
-            this.numPremierApport.Size = new System.Drawing.Size(292, 27);
+            this.numPremierApport.Size = new System.Drawing.Size(402, 34);
             this.numPremierApport.TabIndex = 27;
             // 
             // frmProposerCredit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 625);
+            this.ClientSize = new System.Drawing.Size(1550, 1050);
             this.Controls.Add(this.numPremierApport);
             this.Controls.Add(this.numTaux);
             this.Controls.Add(this.numMontantMensualites);
@@ -392,6 +421,9 @@ namespace VehiculeNeufOccasion
             this.Controls.Add(this.groupBoxChoix);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(1550, 1050);
+            this.MinimumSize = new System.Drawing.Size(1550, 1050);
             this.Name = "frmProposerCredit";
             this.Text = "Proposer un crédit";
             this.Activated += new System.EventHandler(this.frmProposerCredit_Activated);

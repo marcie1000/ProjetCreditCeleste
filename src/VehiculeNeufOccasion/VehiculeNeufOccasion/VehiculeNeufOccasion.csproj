@@ -70,6 +70,12 @@
     <Compile Include="ClassesDonnees\Client.cs" />
     <Compile Include="ClassesDonnees\DemandePret.cs" />
     <Compile Include="ClassesDonnees\Etat.cs" />
+    <Compile Include="frmAdministration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministration.Designer.cs">
+      <DependentUpon>frmAdministration.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChoisirClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     <Compile Include="frmAcheter.Designer.cs">
       <DependentUpon>frmAcheter.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCompte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompte.Designer.cs">
+      <DependentUpon>frmCompte.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCreationUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +111,18 @@
     </Compile>
     <Compile Include="frmConnexion.Designer.cs">
       <DependentUpon>frmConnexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreerClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreerClient.Designer.cs">
+      <DependentUpon>frmCreerClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLeasing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLeasing.Designer.cs">
+      <DependentUpon>frmLeasing.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLouer.cs">
       <SubType>Form</SubType>
@@ -141,14 +165,26 @@
     <EmbeddedResource Include="frmAcheter.resx">
       <DependentUpon>frmAcheter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministration.resx">
+      <DependentUpon>frmAdministration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChoisirClient.resx">
       <DependentUpon>frmChoisirClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompte.resx">
+      <DependentUpon>frmCompte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCreationUser.resx">
       <DependentUpon>frmCreationUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConnexion.resx">
       <DependentUpon>frmConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreerClient.resx">
+      <DependentUpon>frmCreerClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLeasing.resx">
+      <DependentUpon>frmLeasing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLouer.resx">
       <DependentUpon>frmLouer.cs</DependentUpon>
@@ -183,10 +219,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-<PropertyGroup> 
-
-<GenerateResourceMSBuildArchitecture>CurrentArchitecture</GenerateResourceMSBuildArchitecture>
-<GenerateResourceMSBuildRuntime>CurrentRuntime</GenerateResourceMSBuildRuntime>
-    
-</PropertyGroup>
+  <PropertyGroup>
+    <GenerateResourceMSBuildArchitecture>CurrentArchitecture</GenerateResourceMSBuildArchitecture>
+    <GenerateResourceMSBuildRuntime>CurrentRuntime</GenerateResourceMSBuildRuntime>
+  </PropertyGroup>
 </Project>

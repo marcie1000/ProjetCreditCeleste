@@ -46,6 +46,23 @@ namespace VehiculeNeufOccasion
         {
             try
             {
+                // Vérifier si le client sélectionné est le client temporaire
+                if (Globales.ClientTemporaire != null && Globales.clientSelectionne == Globales.ClientTemporaire)
+                {
+                    int idx = Globales.suiteFenetres.getIndexFenetreActuelle();
+                    // Remove any frmCreerClient present after this window (to avoid duplicates)
+                    if (idx + 1 < Globales.suiteFenetres.listeFenetres.Count &&
+                        Globales.suiteFenetres.listeFenetres[idx + 1] is frmCreerClient)
+                    {
+                        Globales.suiteFenetres.listeFenetres.RemoveAt(idx + 1);
+                    }
+                    frmCreerClient fenCreerClient = new frmCreerClient() { TopLevel = false, TopMost = true };
+                    Globales.suiteFenetres.listeFenetres.Insert(idx + 1, fenCreerClient);
+                    Globales.suiteFenetres.afficherFenetreSuivante(Globales.panelConteneurAcceuil, Globales.fenAccueil);
+                    return;
+                }
+
+                // Si ce n'est pas un client temporaire, continuer normalement
                 Globales.suiteFenetres.afficherFenetreSuivante(Globales.panelConteneurAcceuil, Globales.fenAccueil);
             }
             catch (Exception ex)

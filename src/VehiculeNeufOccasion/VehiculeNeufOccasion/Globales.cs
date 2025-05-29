@@ -29,6 +29,9 @@ namespace VehiculeNeufOccasion
         public static Dictionary<int, Client> ClientsRecherche = new Dictionary<int, Client>();
         public static Client clientSelectionne;
         public static Vehicule vehiculeSelectionneVente;
+        public static Vehicule vehiculeSelectionneLocation;
         public static decimal prixTotalAFinancer;
+        public static Utilisateur UtilisateurConnecte = null;
+        public static Client ClientTemporaire = null;
     }
 }

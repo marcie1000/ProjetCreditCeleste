@@ -126,10 +126,30 @@ namespace VehiculeNeufOccasion
         {
             try
             {
-                frmConnexion nouvelleFen = new frmConnexion() { TopLevel = false, TopMost = true };
-                Globales.suiteFenetres.resetSuiteFenetres(this.panelConteneur, this);
-                Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, nouvelleFen);
-                Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
+                bool hasUsers = false;
+                using (var cmd = new System.Data.SqlClient.SqlCommand("SELECT COUNT(*) FROM concession.UTILISATEUR;"))
+                {
+                    var dt = Bdd.select(cmd);
+                    if (dt.Rows.Count > 0 && Convert.ToInt32(dt.Rows[0][0]) > 0)
+                        hasUsers = true;
+                }
+
+                if (!hasUsers)
+                {
+                    // No users: show user creation form
+                    frmCreationUser nouvelleFen = new frmCreationUser() { TopLevel = false, TopMost = true };
+                    Globales.suiteFenetres.resetSuiteFenetres(this.panelConteneur, this);
+                    Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, nouvelleFen);
+                    Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
+                }
+                else
+                {
+                    // Users exist: show login form
+                    frmConnexion nouvelleFen = new frmConnexion() { TopLevel = false, TopMost = true };
+                    Globales.suiteFenetres.resetSuiteFenetres(this.panelConteneur, this);
+                    Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, nouvelleFen);
+                    Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
+                }
             }
             catch (Exception ex)
             {
@@ -138,5 +158,68 @@ namespace VehiculeNeufOccasion
             Globales.panelConteneurAcceuil = this.panelConteneur;
         }
 
+        private void btnAdministration_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmAdministration adminPanel = new frmAdministration() { TopLevel = false, TopMost = true };
+                Globales.suiteFenetres.resetSuiteFenetres(this.panelConteneur, this);
+                Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, adminPanel);
+                Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCompte_Click(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                bool hasUsers = false;
+                using (var cmd = new System.Data.SqlClient.SqlCommand("SELECT COUNT(*) FROM concession.UTILISATEUR;"))
+                {
+                    var dt = Bdd.select(cmd);
+                    if (dt.Rows.Count > 0 && Convert.ToInt32(dt.Rows[0][0]) > 0)
+                        hasUsers = true;
+                }
+
+                if (!hasUsers)
+                {
+                    // No users: show user creation form
+                    frmCreationUser nouvelleFen = new frmCreationUser() { TopLevel = false, TopMost = true };
+                    Globales.suiteFenetres.resetSuiteFenetres(this.panelConteneur, this);
+                    Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, nouvelleFen);
+                    Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
+                }
+                else
+                {
+
+                    if (Globales.UtilisateurConnecte == null)
+                    {
+                        // Users exist && Not connected: show login form
+                        frmConnexion nouvelleFen = new frmConnexion() { TopLevel = false, TopMost = true };
+                        Globales.suiteFenetres.resetSuiteFenetres(this.panelConteneur, this);
+                        Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, nouvelleFen);
+                        Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
+                    }
+                    else
+                    {
+                        // Users exist && Connected: show account form
+                        frmCompte nouvelleFen = new frmCompte() { TopLevel = false, TopMost = true };
+                        Globales.suiteFenetres.resetSuiteFenetres(this.panelConteneur, this);
+                        Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, nouvelleFen);
+                        Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Globales.panelConteneurAcceuil = this.panelConteneur;
+        }
     }
 }
