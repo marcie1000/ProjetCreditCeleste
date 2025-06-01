@@ -49,6 +49,7 @@
             this.btnDeconnexion.TabIndex = 0;
             this.btnDeconnexion.Text = "Déconnexion";
             this.btnDeconnexion.UseVisualStyleBackColor = true;
+            this.btnDeconnexion.Click += new System.EventHandler(this.btnDeconnexion_Click);
             // 
             // lblLogin
             // 

@@ -45,7 +45,12 @@ namespace VehiculeNeufOccasion
                                 // ...set other properties if needed...
                             };
                             MessageBox.Show("Connexion réussie !");
-                            // ...proceed to main app...
+                            // Redirect to frmCompte
+                            frmCompte nouvelleFen = new frmCompte() { TopLevel = false, TopMost = true };
+                            Globales.suiteFenetres.resetSuiteFenetres(Globales.panelConteneurAcceuil, Globales.fenAccueil);
+                            Globales.suiteFenetres.ajouterFenetre(Globales.panelConteneurAcceuil, Globales.fenAccueil, nouvelleFen);
+                            Globales.suiteFenetres.changerFenetreActive(0, Globales.panelConteneurAcceuil, Globales.fenAccueil);
+                            return;
                         }
                         else
                         {

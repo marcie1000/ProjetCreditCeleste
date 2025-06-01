@@ -68,5 +68,16 @@ namespace VehiculeNeufOccasion
                 MessageBox.Show("Aucune modification à enregistrer.");
             }
         }
+
+        private void btnDeconnexion_Click(object sender, EventArgs e)
+        {
+            // Clear user session
+            Globales.UtilisateurConnecte = null;
+            // Return to login form
+            frmConnexion nouvelleFen = new frmConnexion() { TopLevel = false, TopMost = true };
+            Globales.suiteFenetres.resetSuiteFenetres(Globales.panelConteneurAcceuil, Globales.fenAccueil);
+            Globales.suiteFenetres.ajouterFenetre(Globales.panelConteneurAcceuil, Globales.fenAccueil, nouvelleFen);
+            Globales.suiteFenetres.changerFenetreActive(0, Globales.panelConteneurAcceuil, Globales.fenAccueil);
+        }
     }
 }
