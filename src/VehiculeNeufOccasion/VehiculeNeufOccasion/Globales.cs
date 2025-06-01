@@ -37,6 +37,7 @@ namespace VehiculeNeufOccasion
         public static bool vehiculeEditionValide = false;
         public static Vehicule vehiculeSelectionneVente;
         public static Vehicule vehiculeSelectionneLocation;
+        public static Vehicule vehiculeSelectionneRachat;
         public static decimal prixTotalAFinancer;
         public static Utilisateur UtilisateurConnecte = null;
         public static Client ClientTemporaire = null;

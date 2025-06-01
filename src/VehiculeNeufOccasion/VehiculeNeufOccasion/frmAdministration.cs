@@ -100,7 +100,8 @@ namespace VehiculeNeufOccasion
                     Globales.vehiculeEdition.IdModele = (int)drv.Row["id_modele"];
                     Globales.vehiculeEdition.IdModeleNavigation = Globales.Modeles[Globales.vehiculeEdition.IdModele];
                     Globales.vehiculeEdition.IdPersonnePossession = (int)drv.Row["id_personnePossession"];
-                    Globales.vehiculeEdition.IdPersonnePossessionNavigation = Globales.Personnes[Globales.vehiculeEdition.IdPersonnePossession];
+                    if(Globales.Personnes.ContainsKey(Globales.vehiculeEdition.IdPersonnePossession))
+                        Globales.vehiculeEdition.IdPersonnePossessionNavigation = Globales.Personnes[Globales.vehiculeEdition.IdPersonnePossession];
                     Globales.vehiculeEdition.Id = (int)drv.Row["id"];
                     LogiqueAchats.updateVehicule();
                     break;

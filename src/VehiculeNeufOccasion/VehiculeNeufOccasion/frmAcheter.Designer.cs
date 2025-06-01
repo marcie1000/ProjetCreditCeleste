@@ -48,6 +48,7 @@ namespace VehiculeNeufOccasion
             this.Carburant = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.État = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gpbChoixV = new System.Windows.Forms.GroupBox();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBoxChoix.SuspendLayout();
             this.gpbChoixV.SuspendLayout();
             this.SuspendLayout();
@@ -151,7 +152,8 @@ namespace VehiculeNeufOccasion
             this.Puissance,
             this.Couleur,
             this.Carburant,
-            this.État});
+            this.État,
+            this.Id});
             this.listViewVehicules.FullRowSelect = true;
             this.listViewVehicules.GridLines = true;
             this.listViewVehicules.HideSelection = false;
@@ -215,6 +217,10 @@ namespace VehiculeNeufOccasion
             this.gpbChoixV.TabStop = false;
             this.gpbChoixV.Text = "Choix du véhicule";
             // 
+            // Id
+            // 
+            this.Id.Text = "Id";
+            // 
             // frmAcheter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,5 +264,6 @@ namespace VehiculeNeufOccasion
         private System.Windows.Forms.ColumnHeader Carburant;
         private System.Windows.Forms.ColumnHeader État;
         private System.Windows.Forms.GroupBox gpbChoixV;
+        private System.Windows.Forms.ColumnHeader Id;
     }
 }
