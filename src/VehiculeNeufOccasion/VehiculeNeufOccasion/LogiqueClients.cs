@@ -38,6 +38,7 @@ namespace VehiculeNeufOccasion
                     unClient.NumRue = (string)dr["numRue"].ToString();
                     unClient.NumTelephone = (string)dr["numTelephone"].ToString();
                     unClient.Ville = (string)dr["ville"];
+                    unClient.Email = (string)dr["email"];
                     Globales.ClientsRecherche.Add(unClient.Id, unClient);
                 }
             }

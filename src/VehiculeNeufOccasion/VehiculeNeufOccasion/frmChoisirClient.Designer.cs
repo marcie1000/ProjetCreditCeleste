@@ -164,7 +164,7 @@ namespace VehiculeNeufOccasion
             this.btnCreer.TabIndex = 9;
             this.btnCreer.Text = "➕ Créer un nouveau client...";
             this.btnCreer.UseVisualStyleBackColor = true;
-            this.btnCreer.Click += new System.EventHandler(this.button1_Click);
+            this.btnCreer.Click += new System.EventHandler(this.btnCreer_Click);
             // 
             // btnRetour
             // 
