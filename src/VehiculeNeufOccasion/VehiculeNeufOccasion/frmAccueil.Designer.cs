@@ -1,5 +1,4 @@
-﻿
-namespace VehiculeNeufOccasion
+﻿namespace VehiculeNeufOccasion
 {
     partial class frmAccueil
     {
@@ -41,9 +40,10 @@ namespace VehiculeNeufOccasion
             // 
             // cmdRevendre
             // 
-            this.cmdRevendre.Location = new System.Drawing.Point(6, 26);
+            this.cmdRevendre.Location = new System.Drawing.Point(8, 39);
+            this.cmdRevendre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdRevendre.Name = "cmdRevendre";
-            this.cmdRevendre.Size = new System.Drawing.Size(228, 36);
+            this.cmdRevendre.Size = new System.Drawing.Size(314, 54);
             this.cmdRevendre.TabIndex = 2;
             this.cmdRevendre.Text = "Revendre un véhicule";
             this.cmdRevendre.UseVisualStyleBackColor = true;
@@ -51,9 +51,10 @@ namespace VehiculeNeufOccasion
             // 
             // cmdLouer
             // 
-            this.cmdLouer.Location = new System.Drawing.Point(240, 26);
+            this.cmdLouer.Location = new System.Drawing.Point(330, 39);
+            this.cmdLouer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdLouer.Name = "cmdLouer";
-            this.cmdLouer.Size = new System.Drawing.Size(229, 36);
+            this.cmdLouer.Size = new System.Drawing.Size(315, 54);
             this.cmdLouer.TabIndex = 3;
             this.cmdLouer.Text = "Louer un véhicule";
             this.cmdLouer.UseVisualStyleBackColor = true;
@@ -67,36 +68,43 @@ namespace VehiculeNeufOccasion
             this.gpbMenu.Controls.Add(this.cmdRevendre);
             this.gpbMenu.Controls.Add(this.cmdLouer);
             this.gpbMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbMenu.Location = new System.Drawing.Point(27, 12);
+            this.gpbMenu.Location = new System.Drawing.Point(37, 18);
+            this.gpbMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gpbMenu.Name = "gpbMenu";
-            this.gpbMenu.Size = new System.Drawing.Size(1519, 80);
+            this.gpbMenu.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbMenu.Size = new System.Drawing.Size(2089, 120);
             this.gpbMenu.TabIndex = 9;
             this.gpbMenu.TabStop = false;
             this.gpbMenu.Text = "Menu";
             // 
             // btnCompte
             // 
-            this.btnCompte.Location = new System.Drawing.Point(937, 26);
+            this.btnCompte.Location = new System.Drawing.Point(1288, 39);
+            this.btnCompte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCompte.Name = "btnCompte";
-            this.btnCompte.Size = new System.Drawing.Size(225, 36);
+            this.btnCompte.Size = new System.Drawing.Size(309, 54);
             this.btnCompte.TabIndex = 6;
             this.btnCompte.Text = "👤 Compte";
             this.btnCompte.UseVisualStyleBackColor = true;
+            this.btnCompte.Click += new System.EventHandler(this.btnCompte_Click);
             // 
             // btnAdministration
             // 
-            this.btnAdministration.Location = new System.Drawing.Point(706, 26);
+            this.btnAdministration.Location = new System.Drawing.Point(971, 39);
+            this.btnAdministration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdministration.Name = "btnAdministration";
-            this.btnAdministration.Size = new System.Drawing.Size(225, 36);
+            this.btnAdministration.Size = new System.Drawing.Size(309, 54);
             this.btnAdministration.TabIndex = 5;
             this.btnAdministration.Text = "🛠️ Administration";
             this.btnAdministration.UseVisualStyleBackColor = true;
+            this.btnAdministration.Click += new System.EventHandler(this.btnAdministration_Click);
             // 
             // btnCreerUser
             // 
-            this.btnCreerUser.Location = new System.Drawing.Point(475, 26);
+            this.btnCreerUser.Location = new System.Drawing.Point(653, 39);
+            this.btnCreerUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreerUser.Name = "btnCreerUser";
-            this.btnCreerUser.Size = new System.Drawing.Size(225, 36);
+            this.btnCreerUser.Size = new System.Drawing.Size(309, 54);
             this.btnCreerUser.TabIndex = 4;
             this.btnCreerUser.Text = "Créer un utilisateur";
             this.btnCreerUser.UseVisualStyleBackColor = true;
@@ -105,24 +113,31 @@ namespace VehiculeNeufOccasion
             // panelConteneur
             // 
             this.panelConteneur.AutoScroll = true;
-            this.panelConteneur.Location = new System.Drawing.Point(27, 111);
+            this.panelConteneur.AutoSize = true;
+            this.panelConteneur.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelConteneur.Location = new System.Drawing.Point(37, 166);
+            this.panelConteneur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelConteneur.Name = "panelConteneur";
-            this.panelConteneur.Size = new System.Drawing.Size(1597, 721);
+            this.panelConteneur.Size = new System.Drawing.Size(2196, 1082);
             this.panelConteneur.TabIndex = 12;
             // 
             // frmAccueil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1650, 917);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(2269, 1376);
             this.Controls.Add(this.gpbMenu);
             this.Controls.Add(this.panelConteneur);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAccueil";
             this.Text = "Accueil";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmAccueil_Load);
             this.gpbMenu.ResumeLayout(false);
             this.ResumeLayout(false);
-
+            this.PerformLayout();
         }
 
         #endregion

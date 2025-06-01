@@ -40,21 +40,24 @@ namespace VehiculeNeufOccasion
             // btnValider
             // 
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValider.Location = new System.Drawing.Point(347, 405);
+            this.btnValider.Location = new System.Drawing.Point(477, 608);
+            this.btnValider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(272, 50);
+            this.btnValider.Size = new System.Drawing.Size(374, 75);
             this.btnValider.TabIndex = 11;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(344, 244);
+            this.label3.Location = new System.Drawing.Point(473, 366);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 20);
+            this.label3.Size = new System.Drawing.Size(158, 29);
             this.label3.TabIndex = 10;
             this.label3.Text = "Mot de passe";
             // 
@@ -63,27 +66,30 @@ namespace VehiculeNeufOccasion
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(343, 161);
+            this.label2.Location = new System.Drawing.Point(472, 242);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.Size = new System.Drawing.Size(73, 29);
             this.label2.TabIndex = 9;
             this.label2.Text = "Login";
             // 
             // txtMdp
             // 
             this.txtMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMdp.Location = new System.Drawing.Point(348, 276);
+            this.txtMdp.Location = new System.Drawing.Point(478, 414);
+            this.txtMdp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMdp.Name = "txtMdp";
             this.txtMdp.PasswordChar = '*';
-            this.txtMdp.Size = new System.Drawing.Size(271, 27);
+            this.txtMdp.Size = new System.Drawing.Size(371, 34);
             this.txtMdp.TabIndex = 8;
             // 
             // txtLogin
             // 
             this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin.Location = new System.Drawing.Point(348, 193);
+            this.txtLogin.Location = new System.Drawing.Point(478, 290);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(271, 27);
+            this.txtLogin.Size = new System.Drawing.Size(371, 34);
             this.txtLogin.TabIndex = 7;
             // 
             // label1
@@ -91,17 +97,18 @@ namespace VehiculeNeufOccasion
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(414, 76);
+            this.label1.Location = new System.Drawing.Point(569, 114);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 29);
+            this.label1.Size = new System.Drawing.Size(173, 38);
             this.label1.TabIndex = 6;
             this.label1.Text = "Connexion";
             // 
             // frmConnexion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 555);
+            this.ClientSize = new System.Drawing.Size(1324, 832);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -109,6 +116,7 @@ namespace VehiculeNeufOccasion
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmConnexion";
             this.Text = "Connexion";
             this.ResumeLayout(false);

@@ -31,6 +31,9 @@ namespace VehiculeNeufOccasion
         public static Client clientEdition; // pour la fenêtre de création / édition de client
         public static bool clientEditionValide = false;
         public static Vehicule vehiculeSelectionneVente;
+        public static Vehicule vehiculeSelectionneLocation;
         public static decimal prixTotalAFinancer;
+        public static Utilisateur UtilisateurConnecte = null;
+        public static Client ClientTemporaire = null;
     }
 }
