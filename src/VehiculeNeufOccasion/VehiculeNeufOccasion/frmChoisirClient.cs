@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace VehiculeNeufOccasion
 {
@@ -20,14 +21,14 @@ namespace VehiculeNeufOccasion
                 btnClientTemporaire.Enabled = Globales.ClientTemporaire != null;
         }
 
-        private void btnRechercher_Click(object sender, EventArgs e)
+        private void rechercheEtAffichage(string nom, string prenom)
         {
-            if (!LogiqueClients.rechercheClient(txtNom.Text, txtPrenom.Text))
+            if (!LogiqueClients.rechercheClient(nom, prenom))
                 return;
 
             listView1.Items.Clear();
 
-            foreach(Client c in Globales.ClientsRecherche.Values)
+            foreach (Client c in Globales.ClientsRecherche.Values)
             {
                 ListViewItem item = new ListViewItem(c.Nom);
                 item.SubItems.Add(c.Prenom);
@@ -52,6 +53,11 @@ namespace VehiculeNeufOccasion
                     listView1.Items.Add(tempItem);
                 }
             }
+        }
+
+        private void btnRechercher_Click(object sender, EventArgs e)
+        {
+            rechercheEtAffichage(txtNom.Text, txtPrenom.Text);
         }
 
         private void btnChoisir_Click(object sender, EventArgs e)
@@ -103,28 +109,6 @@ namespace VehiculeNeufOccasion
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Insert frmCreerClient as the next window after this one
-                int idx = Globales.suiteFenetres.getIndexFenetreActuelle();
-                // Remove any frmCreerClient present after this window (to avoid duplicates)
-                if (idx + 1 < Globales.suiteFenetres.listeFenetres.Count &&
-                    Globales.suiteFenetres.listeFenetres[idx + 1] is frmCreerClient)
-                {
-                    Globales.suiteFenetres.listeFenetres.RemoveAt(idx + 1);
-                }
-                frmCreerClient fenCreerClient = new frmCreerClient() { TopLevel = false, TopMost = true };
-                Globales.suiteFenetres.listeFenetres.Insert(idx + 1, fenCreerClient);
-                Globales.suiteFenetres.afficherFenetreSuivante(Globales.panelConteneurAcceuil, Globales.fenAccueil);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void btnRetour_Click(object sender, EventArgs e)
         {
             try
@@ -154,6 +138,12 @@ namespace VehiculeNeufOccasion
             // Enable/disable the button for client temporaire if needed
             if (btnClientTemporaire != null)
                 btnClientTemporaire.Enabled = Globales.ClientTemporaire != null;
+        }
+
+        private void btnCreer_Click(object sender, EventArgs e)
+        {
+                if(LogiqueClients.ajouterClient())
+                    rechercheEtAffichage(Globales.clientEdition.Nom, Globales.clientEdition.Prenom);
         }
     }
 }

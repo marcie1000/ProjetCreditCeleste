@@ -46,6 +46,7 @@ namespace VehiculeNeufOccasion
                     leCarburant.Id = (int)dr["id"];
                     leCarburant.Designation = (string)dr["designation"];
                     Globales.Carburants.Add(leCarburant.Id, leCarburant);
+                    Globales.CarburantsParNom.Add(leCarburant.Designation, leCarburant);
                 }
             }
             catch (Exception e)
@@ -64,6 +65,7 @@ namespace VehiculeNeufOccasion
                     lEtat.Id = (int)dr["id"];
                     lEtat.Designation = (string)dr["designation"];
                     Globales.Etats.Add(lEtat.Id, lEtat);
+                    Globales.EtatsParNom.Add(lEtat.Designation, lEtat);
                 }
             }
             catch (Exception e)
@@ -82,6 +84,7 @@ namespace VehiculeNeufOccasion
                     laMarque.Id = (int)dr["id"];
                     laMarque.Nom = (string)dr["nom"];
                     Globales.Marques.Add(laMarque.Id, laMarque);
+                    Globales.MarquesParNom.Add(laMarque.Nom, laMarque);
                 }
             }
             catch (Exception e)
@@ -133,6 +136,30 @@ namespace VehiculeNeufOccasion
                         laPersonne.Id = (int)result.Rows[0]["id"];
                         Globales.Personnes.Add(laPersonne.Id, laPersonne);
                         Globales.LeGarage.IdPersonneNavigation = laPersonne;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                reussite = false;
+            }
+
+            // récupérer les modèles
+            try
+            {
+                using (SqlCommand command = new SqlCommand("SELECT * FROM concession.MODELE;"))
+                {
+                    DataTable result = Bdd.select(command);
+                    foreach (DataRow dr in result.Rows)
+                    {
+                        Modele leMod = new Modele();
+                        leMod.Id = (int)dr["id"];
+                        leMod.IdMarque = (int)dr["id_marque"];
+                        leMod.IdMarqueNavigation = Globales.Marques[leMod.IdMarque];
+                        leMod.Nom = (string)dr["nom"];
+                        Globales.Modeles.Add(leMod.Id, leMod);
+                        Globales.Marques[leMod.IdMarque].Modeles.Add(leMod);
                     }
                 }
             }

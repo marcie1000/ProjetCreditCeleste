@@ -51,5 +51,28 @@ namespace VehiculeNeufOccasion
                 throw e;
             }
         }
+
+        /// <summary>
+        /// Fait une insersion en retournant l'ID de l'élément inséré.
+        /// </summary>
+        /// <param name="commande"></param>
+        /// <returns></returns>
+        public static int insertScalar(SqlCommand commande)
+        {
+            DataSet result = new DataSet();
+            try
+            {
+                using (SqlConnection oConnexion = new SqlConnection(strConnexion))
+                {
+                    oConnexion.Open();
+                    commande.Connection = oConnexion;
+                    return (int)commande.ExecuteScalar();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

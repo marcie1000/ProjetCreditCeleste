@@ -112,11 +112,23 @@
     <Compile Include="frmConnexion.Designer.cs">
       <DependentUpon>frmConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditClient.Designer.cs">
+      <DependentUpon>frmEditClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCreerClient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCreerClient.Designer.cs">
       <DependentUpon>frmCreerClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditVehicule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditVehicule.Designer.cs">
+      <DependentUpon>frmEditVehicule.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLeasing.cs">
       <SubType>Form</SubType>
@@ -147,6 +159,7 @@
     <Compile Include="ClassesDonnees\LesLocation.cs" />
     <Compile Include="ClassesDonnees\Marque.cs" />
     <Compile Include="ClassesDonnees\Modele.cs" />
+    <Compile Include="LogiqueAchats.cs" />
     <Compile Include="LogiqueClients.cs" />
     <Compile Include="LogiqueVente.cs" />
     <Compile Include="PasswordHelper.cs" />
@@ -180,8 +193,14 @@
     <EmbeddedResource Include="frmConnexion.resx">
       <DependentUpon>frmConnexion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditClient.resx">
+      <DependentUpon>frmEditClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCreerClient.resx">
       <DependentUpon>frmCreerClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditVehicule.resx">
+      <DependentUpon>frmEditVehicule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLeasing.resx">
       <DependentUpon>frmLeasing.cs</DependentUpon>
