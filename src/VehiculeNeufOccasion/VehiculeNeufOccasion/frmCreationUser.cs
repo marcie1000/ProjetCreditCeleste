@@ -16,6 +16,7 @@ namespace VehiculeNeufOccasion
         public frmCreationUser()
         {
             InitializeComponent();
+            this.AcceptButton = btnValider;
         }
 
         private void btnValider_Click(object sender, EventArgs e)

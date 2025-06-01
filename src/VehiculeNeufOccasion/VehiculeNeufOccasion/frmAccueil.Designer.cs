@@ -35,13 +35,14 @@
             this.btnAdministration = new System.Windows.Forms.Button();
             this.btnCreerUser = new System.Windows.Forms.Button();
             this.panelConteneur = new System.Windows.Forms.Panel();
+            this.lblVendeurConnecté = new System.Windows.Forms.Label();
             this.gpbMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdRevendre
             // 
             this.cmdRevendre.Location = new System.Drawing.Point(8, 39);
-            this.cmdRevendre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdRevendre.Margin = new System.Windows.Forms.Padding(4);
             this.cmdRevendre.Name = "cmdRevendre";
             this.cmdRevendre.Size = new System.Drawing.Size(314, 54);
             this.cmdRevendre.TabIndex = 2;
@@ -52,7 +53,7 @@
             // cmdLouer
             // 
             this.cmdLouer.Location = new System.Drawing.Point(330, 39);
-            this.cmdLouer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdLouer.Margin = new System.Windows.Forms.Padding(4);
             this.cmdLouer.Name = "cmdLouer";
             this.cmdLouer.Size = new System.Drawing.Size(315, 54);
             this.cmdLouer.TabIndex = 3;
@@ -62,6 +63,7 @@
             // 
             // gpbMenu
             // 
+            this.gpbMenu.Controls.Add(this.lblVendeurConnecté);
             this.gpbMenu.Controls.Add(this.btnCompte);
             this.gpbMenu.Controls.Add(this.btnAdministration);
             this.gpbMenu.Controls.Add(this.btnCreerUser);
@@ -69,9 +71,9 @@
             this.gpbMenu.Controls.Add(this.cmdLouer);
             this.gpbMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbMenu.Location = new System.Drawing.Point(37, 18);
-            this.gpbMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbMenu.Margin = new System.Windows.Forms.Padding(4);
             this.gpbMenu.Name = "gpbMenu";
-            this.gpbMenu.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbMenu.Padding = new System.Windows.Forms.Padding(4);
             this.gpbMenu.Size = new System.Drawing.Size(2089, 120);
             this.gpbMenu.TabIndex = 9;
             this.gpbMenu.TabStop = false;
@@ -80,7 +82,7 @@
             // btnCompte
             // 
             this.btnCompte.Location = new System.Drawing.Point(1288, 39);
-            this.btnCompte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCompte.Margin = new System.Windows.Forms.Padding(4);
             this.btnCompte.Name = "btnCompte";
             this.btnCompte.Size = new System.Drawing.Size(309, 54);
             this.btnCompte.TabIndex = 6;
@@ -91,7 +93,7 @@
             // btnAdministration
             // 
             this.btnAdministration.Location = new System.Drawing.Point(971, 39);
-            this.btnAdministration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdministration.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdministration.Name = "btnAdministration";
             this.btnAdministration.Size = new System.Drawing.Size(309, 54);
             this.btnAdministration.TabIndex = 5;
@@ -102,7 +104,7 @@
             // btnCreerUser
             // 
             this.btnCreerUser.Location = new System.Drawing.Point(653, 39);
-            this.btnCreerUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreerUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreerUser.Name = "btnCreerUser";
             this.btnCreerUser.Size = new System.Drawing.Size(309, 54);
             this.btnCreerUser.TabIndex = 4;
@@ -116,10 +118,19 @@
             this.panelConteneur.AutoSize = true;
             this.panelConteneur.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelConteneur.Location = new System.Drawing.Point(37, 166);
-            this.panelConteneur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelConteneur.Margin = new System.Windows.Forms.Padding(4);
             this.panelConteneur.Name = "panelConteneur";
-            this.panelConteneur.Size = new System.Drawing.Size(2196, 1082);
+            this.panelConteneur.Size = new System.Drawing.Size(0, 0);
             this.panelConteneur.TabIndex = 12;
+            // 
+            // lblVendeurConnecté
+            // 
+            this.lblVendeurConnecté.AutoSize = true;
+            this.lblVendeurConnecté.Location = new System.Drawing.Point(1669, 52);
+            this.lblVendeurConnecté.Name = "lblVendeurConnecté";
+            this.lblVendeurConnecté.Size = new System.Drawing.Size(266, 29);
+            this.lblVendeurConnecté.TabIndex = 7;
+            this.lblVendeurConnecté.Text = "Vendeur non connecté !";
             // 
             // frmAccueil
             // 
@@ -130,14 +141,16 @@
             this.ClientSize = new System.Drawing.Size(2269, 1376);
             this.Controls.Add(this.gpbMenu);
             this.Controls.Add(this.panelConteneur);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAccueil";
             this.Text = "Accueil";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmAccueil_Load);
             this.gpbMenu.ResumeLayout(false);
+            this.gpbMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -148,6 +161,7 @@
         private System.Windows.Forms.Panel panelConteneur;
         private System.Windows.Forms.Button btnCompte;
         private System.Windows.Forms.Button btnAdministration;
+        private System.Windows.Forms.Label lblVendeurConnecté;
     }
 }
 
