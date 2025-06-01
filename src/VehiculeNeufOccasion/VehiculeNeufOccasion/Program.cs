@@ -126,14 +126,14 @@ namespace VehiculeNeufOccasion
             // sélection de la personne concernée par le garage
             try
             {
-                using(SqlCommand commande = new SqlCommand("SELECT * FROM concession.PERSONNE WHERE id = @idPersonne;"))
+                using(SqlCommand commande = new SqlCommand("SELECT * FROM concession.PERSONNE;"))
                 {
                     commande.Parameters.AddWithValue("@idPersonne", Globales.LeGarage.IdPersonne);
                     DataTable result = Bdd.select(commande);
-                    if(result.Rows.Count != 0)
+                    foreach(DataRow dr in result.Rows)
                     {
                         Personne laPersonne = new Personne();
-                        laPersonne.Id = (int)result.Rows[0]["id"];
+                        laPersonne.Id = (int)dr["id"];
                         Globales.Personnes.Add(laPersonne.Id, laPersonne);
                         Globales.LeGarage.IdPersonneNavigation = laPersonne;
                     }

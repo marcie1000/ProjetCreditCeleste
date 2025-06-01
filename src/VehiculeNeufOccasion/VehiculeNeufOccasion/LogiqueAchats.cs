@@ -58,6 +58,7 @@ namespace VehiculeNeufOccasion
                     return valeurRetour;
                 }
             }
+            Globales.Vehicules[Globales.vehiculeEdition.Id] = Globales.vehiculeEdition;
             return true;
         }
 
@@ -106,6 +107,7 @@ namespace VehiculeNeufOccasion
                     return valeurRetour;
                 }
             }
+            Globales.Vehicules.Add(Globales.vehiculeEdition.Id, Globales.vehiculeEdition);
             return true;
         }
     }
