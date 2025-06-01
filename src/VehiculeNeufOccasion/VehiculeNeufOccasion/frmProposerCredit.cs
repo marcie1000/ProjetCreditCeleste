@@ -90,11 +90,25 @@ namespace VehiculeNeufOccasion
             }
         }
 
-        private void frmProposerCredit_Load(object sender, EventArgs e)
+        private void recalculerPrixAFinancer()
         {
             lblPrixTotalVehicule.Text = Globales.vehiculeSelectionneVente.Prix.ToString() + " €";
-            lblPrixTotal.Text = Globales.vehiculeSelectionneVente.Prix.ToString() + " €";
-            Globales.prixTotalAFinancer = Globales.vehiculeSelectionneVente.Prix;
+            if (Globales.vehiculeSelectionneRachat != null)
+            {
+                lblMontantRachat.Text = Globales.vehiculeSelectionneRachat.Prix.ToString() + " €";
+                Globales.prixTotalAFinancer = Globales.vehiculeSelectionneVente.Prix - Globales.vehiculeSelectionneRachat.Prix;
+                if (Globales.prixTotalAFinancer < 0)
+                    Globales.prixTotalAFinancer = 0;
+            }
+            else
+                Globales.prixTotalAFinancer = Globales.vehiculeSelectionneVente.Prix;
+
+            lblPrixTotal.Text = Globales.prixTotalAFinancer + " €";
+        }
+
+        private void frmProposerCredit_Load(object sender, EventArgs e)
+        {
+            recalculerPrixAFinancer();
         }
 
         private void cb1_NbMensualités_CheckedChanged(object sender, EventArgs e)
@@ -216,6 +230,7 @@ namespace VehiculeNeufOccasion
         private void btnCalculer_Click(object sender, EventArgs e)
         {
             demandePret.Taux = (double)numTaux.Value;
+            recalculerPrixAFinancer();
 
             if (!cb1_NbMensualités.Checked)
             {
@@ -283,6 +298,11 @@ namespace VehiculeNeufOccasion
             // lblNbMensualites.Text = numNbMensualites.Value.ToString();
             // lblMontantMensualite.Text = numMontantMensualites.Value.ToString("N2") + " €";
             // lblPremierApport.Text = numPremierApport.Value.ToString("N2") + " €";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Factures.generer();
         }
     }
 }

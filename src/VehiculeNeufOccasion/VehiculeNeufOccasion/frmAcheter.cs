@@ -58,6 +58,7 @@ namespace VehiculeNeufOccasion
                     item.SubItems.Add(v.Couleur.ToString());
                     item.SubItems.Add(v.IdCarburantNavigation.Designation);
                     item.SubItems.Add(v.IdEtatNavigation.Designation);
+                    item.SubItems.Add(v.Id.ToString());
                     listViewVehicules.Items.Add(item);
                 }
                 //lblMessage.Visible = false;
@@ -84,6 +85,21 @@ namespace VehiculeNeufOccasion
 
         private void btnSuivant_Click(object sender, EventArgs e)
         {
+            if(rdbRachat.Checked)
+            {
+                if(listViewVehicules.SelectedIndices.Count == 0)
+                {
+                    MessageBox.Show("Vous devez sélectionner un véhicule, ou désactiver le rachat d'un véhicule.");
+                    return;
+                }
+
+                int id = Convert.ToInt32(listViewVehicules.SelectedItems[0].SubItems[9].Text);
+                Globales.vehiculeSelectionneRachat = Globales.Vehicules[id];
+            }
+            else
+            {
+                Globales.vehiculeSelectionneRachat = null;
+            }
 
             try
             {

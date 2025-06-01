@@ -44,6 +44,7 @@ namespace VehiculeNeufOccasion
                     item.SubItems.Add(v.Couleur.ToString());
                     item.SubItems.Add(v.IdCarburantNavigation.Designation);
                     item.SubItems.Add(v.IdEtatNavigation.Designation);
+                    item.SubItems.Add(v.Id.ToString());
                     listViewVehicules.Items.Add(item);
                 }
                 lblMessage.Visible = false;

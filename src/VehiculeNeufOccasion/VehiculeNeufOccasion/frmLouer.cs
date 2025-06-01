@@ -15,6 +15,7 @@ namespace VehiculeNeufOccasion
         public frmLouer()
         {
             InitializeComponent();
+            this.AcceptButton = btnLouer;
         }
 
         private void frmLouer_Shown(object sender, EventArgs e)

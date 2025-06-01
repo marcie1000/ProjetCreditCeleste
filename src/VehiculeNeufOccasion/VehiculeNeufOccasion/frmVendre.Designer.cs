@@ -41,6 +41,7 @@ namespace VehiculeNeufOccasion
             this.État = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblMessage = new System.Windows.Forms.Label();
             this.btnVendre = new System.Windows.Forms.Button();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listViewVehicules
@@ -54,15 +55,15 @@ namespace VehiculeNeufOccasion
             this.Puissance,
             this.Couleur,
             this.Carburant,
-            this.État});
+            this.État,
+            this.Id});
             this.listViewVehicules.FullRowSelect = true;
             this.listViewVehicules.GridLines = true;
             this.listViewVehicules.HideSelection = false;
-            this.listViewVehicules.Location = new System.Drawing.Point(16, 18);
-            this.listViewVehicules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewVehicules.Location = new System.Drawing.Point(21, 23);
             this.listViewVehicules.MultiSelect = false;
             this.listViewVehicules.Name = "listViewVehicules";
-            this.listViewVehicules.Size = new System.Drawing.Size(749, 390);
+            this.listViewVehicules.Size = new System.Drawing.Size(997, 479);
             this.listViewVehicules.TabIndex = 25;
             this.listViewVehicules.UseCompatibleStateImageBehavior = false;
             this.listViewVehicules.View = System.Windows.Forms.View.Details;
@@ -111,38 +112,39 @@ namespace VehiculeNeufOccasion
             // 
             this.lblMessage.AutoSize = true;
             this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.Location = new System.Drawing.Point(13, 420);
-            this.lblMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMessage.Location = new System.Drawing.Point(17, 517);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(65, 17);
+            this.lblMessage.Size = new System.Drawing.Size(77, 20);
             this.lblMessage.TabIndex = 26;
             this.lblMessage.Text = "Message";
             // 
             // btnVendre
             // 
             this.btnVendre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVendre.Location = new System.Drawing.Point(655, 440);
-            this.btnVendre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVendre.Location = new System.Drawing.Point(873, 542);
             this.btnVendre.Name = "btnVendre";
-            this.btnVendre.Size = new System.Drawing.Size(109, 36);
+            this.btnVendre.Size = new System.Drawing.Size(145, 44);
             this.btnVendre.TabIndex = 27;
             this.btnVendre.Text = "&Vendre...";
             this.btnVendre.UseVisualStyleBackColor = true;
             this.btnVendre.Click += new System.EventHandler(this.btnVendre_Click);
             // 
+            // Id
+            // 
+            this.Id.Text = "Id";
+            // 
             // frmVendre
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 515);
+            this.ClientSize = new System.Drawing.Size(1055, 633);
             this.ControlBox = false;
             this.Controls.Add(this.btnVendre);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.listViewVehicules);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MaximumSize = new System.Drawing.Size(791, 515);
-            this.MinimumSize = new System.Drawing.Size(791, 515);
+            this.MaximumSize = new System.Drawing.Size(1055, 633);
+            this.MinimumSize = new System.Drawing.Size(1055, 633);
             this.Name = "frmVendre";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -167,5 +169,6 @@ namespace VehiculeNeufOccasion
         private System.Windows.Forms.ColumnHeader Carburant;
         private System.Windows.Forms.ColumnHeader État;
         private System.Windows.Forms.Button btnVendre;
+        private System.Windows.Forms.ColumnHeader Id;
     }
 }

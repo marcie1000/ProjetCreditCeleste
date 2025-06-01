@@ -15,6 +15,69 @@ namespace VehiculeNeufOccasion
         public frmCompte()
         {
             InitializeComponent();
+            this.AcceptButton = btnSave;
+        }
+
+        private void frmCompte_Load(object sender, EventArgs e)
+        {
+            if (Globales.UtilisateurConnecte == null)
+            {
+                MessageBox.Show("Aucun utilisateur connecté.");
+                this.Close();
+                return;
+            }
+
+            txtLogin.Text = Globales.UtilisateurConnecte.Login;
+            txtLogin.Enabled = false; // login is not editable
+            cbAdmin.Checked = Globales.UtilisateurConnecte.Admin;
+            cbAdmin.Enabled = Globales.UtilisateurConnecte.Admin; // only editable if admin
+            txtNewPassword.Text = "";
+            txtConfirmPassword.Text = "";
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtNewPassword.Text != "" || txtConfirmPassword.Text != "")
+            {
+                if (txtNewPassword.Text != txtConfirmPassword.Text)
+                {
+                    MessageBox.Show("Les mots de passe ne correspondent pas.");
+                    return;
+                }
+                // Update password
+                try
+                {
+                    string hash = PasswordHelper.hashPassword(txtNewPassword.Text);
+                    using (var cmd = new System.Data.SqlClient.SqlCommand(
+                        "UPDATE concession.UTILISATEUR SET mdp = @mdp WHERE id = @id"))
+                    {
+                        cmd.Parameters.AddWithValue("@mdp", hash);
+                        cmd.Parameters.AddWithValue("@id", Globales.UtilisateurConnecte.Id);
+                        Bdd.insert(cmd);
+                    }
+                    Globales.UtilisateurConnecte.Mdp = hash;
+                    MessageBox.Show("Mot de passe mis à jour.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur lors de la mise à jour du mot de passe : " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Aucune modification à enregistrer.");
+            }
+        }
+
+        private void btnDeconnexion_Click(object sender, EventArgs e)
+        {
+            // Clear user session
+            Globales.UtilisateurConnecte = null;
+            // Return to login form
+            frmConnexion nouvelleFen = new frmConnexion() { TopLevel = false, TopMost = true };
+            Globales.suiteFenetres.resetSuiteFenetres(Globales.panelConteneurAcceuil, Globales.fenAccueil);
+            Globales.suiteFenetres.ajouterFenetre(Globales.panelConteneurAcceuil, Globales.fenAccueil, nouvelleFen);
+            Globales.suiteFenetres.changerFenetreActive(0, Globales.panelConteneurAcceuil, Globales.fenAccueil);
         }
     }
 }

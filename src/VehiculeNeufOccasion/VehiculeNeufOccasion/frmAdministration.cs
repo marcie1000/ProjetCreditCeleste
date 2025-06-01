@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace VehiculeNeufOccasion
 {
@@ -14,7 +15,10 @@ namespace VehiculeNeufOccasion
 
         private void frmAdministration_Load(object sender, EventArgs e)
         {
-            cbTables.Items.AddRange(new string[] { "VEHICULE", "CLIENT", "VENDEUR" });
+            var tables = new List<string> { "VEHICULE", "CLIENT", "VENDEUR" };
+            if (Globales.UtilisateurConnecte != null && Globales.UtilisateurConnecte.Admin)
+                tables.Add("UTILISATEUR");
+            cbTables.Items.AddRange(tables.ToArray());
             cbTables.SelectedIndex = 0;
             LoadTableData();
         }
@@ -58,8 +62,25 @@ namespace VehiculeNeufOccasion
                 case "VENDEUR":
                     MessageBox.Show("Ajout de vendeur non implémenté ici.");
                     break;
+                case "UTILISATEUR":
+                    if (Globales.UtilisateurConnecte != null && Globales.UtilisateurConnecte.Admin)
+                    {
+                        frmCreationUser frm = new frmCreationUser();
+                        frm.ForceSizableBorder = true;
+                        // Show as dialog and only reload if DialogResult.OK
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadTableData();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Accès réservé aux administrateurs.");
+                    }
+                    break;
             }
-            LoadTableData();
+            if (table != "UTILISATEUR") // already handled above
+                LoadTableData();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -100,15 +121,42 @@ namespace VehiculeNeufOccasion
                     Globales.vehiculeEdition.IdModele = (int)drv.Row["id_modele"];
                     Globales.vehiculeEdition.IdModeleNavigation = Globales.Modeles[Globales.vehiculeEdition.IdModele];
                     Globales.vehiculeEdition.IdPersonnePossession = (int)drv.Row["id_personnePossession"];
-                    Globales.vehiculeEdition.IdPersonnePossessionNavigation = Globales.Personnes[Globales.vehiculeEdition.IdPersonnePossession];
+                    if(Globales.Personnes.ContainsKey(Globales.vehiculeEdition.IdPersonnePossession))
+                        Globales.vehiculeEdition.IdPersonnePossessionNavigation = Globales.Personnes[Globales.vehiculeEdition.IdPersonnePossession];
                     Globales.vehiculeEdition.Id = (int)drv.Row["id"];
                     LogiqueAchats.updateVehicule();
+                    break;
+                case "VENDEUR":
+                    MessageBox.Show("Modification de vendeur non implémentée ici.");
+                    break;
+                case "UTILISATEUR":
+                    if (Globales.UtilisateurConnecte != null && Globales.UtilisateurConnecte.Admin)
+                    {
+                        frmCreationUser frm = new frmCreationUser();
+                        frm.ForceSizableBorder = true;
+                        // Prefill fields
+                        frm.SetUserForEdit(
+                            (int)drv.Row["id"],
+                            drv.Row["login"].ToString(),
+                            drv.Row["mdp"].ToString(),
+                            drv.Row.Table.Columns.Contains("admin_") ? (bool)drv.Row["admin_"] : false
+                        );
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadTableData();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Accès réservé aux administrateurs.");
+                    }
                     break;
                 default:
                     MessageBox.Show("Modification non implémentée ici.");
                     break;
             }
-            LoadTableData();
+            if (table != "UTILISATEUR")
+                LoadTableData();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -119,6 +167,11 @@ namespace VehiculeNeufOccasion
             int id = Convert.ToInt32(drv.Row["id"]);
             if (MessageBox.Show("Confirmer la suppression ?", "Suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                if (table == "UTILISATEUR" && (Globales.UtilisateurConnecte == null || !Globales.UtilisateurConnecte.Admin))
+                {
+                    MessageBox.Show("Suppression d'utilisateur réservée aux administrateurs.");
+                    return;
+                }
                 using (var cmd = new SqlCommand($"DELETE FROM concession.{table} WHERE id=@id"))
                 {
                     cmd.Parameters.AddWithValue("@id", id);

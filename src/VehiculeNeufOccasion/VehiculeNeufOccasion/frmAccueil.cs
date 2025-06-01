@@ -150,6 +150,36 @@ namespace VehiculeNeufOccasion
                     Globales.suiteFenetres.ajouterFenetre(this.panelConteneur, this, nouvelleFen);
                     Globales.suiteFenetres.changerFenetreActive(0, this.panelConteneur, this);
                 }
+
+                // Set lblVendeurConnecté to vendeur name if connected
+                if (this.Controls.Find("lblVendeurConnecté", true).FirstOrDefault() is Label lblVendeur)
+                {
+                    if (Globales.UtilisateurConnecte != null)
+                    {
+                        // Try to find a vendeur associated with the connected user
+                        var vendeur = Globales.LeGarage?.IdPersonneNavigation?.Garages
+                            .SelectMany(g => g.Ventes)
+                            .Select(v => v.IdClientNavigation)
+                            .OfType<Vendeur>()
+                            .FirstOrDefault(v => v.IdUtilisateur == Globales.UtilisateurConnecte.Id);
+
+                        // Or, if you have a global vendeur object, use it directly:
+                        // var vendeur = Globales.VendeurConnecte;
+
+                        if (vendeur != null)
+                        {
+                            lblVendeur.Text = $"{vendeur.Prenom} {vendeur.Nom}";
+                        }
+                        else
+                        {
+                            lblVendeur.Text = lblVendeur.Tag != null ? lblVendeur.Tag.ToString() : lblVendeur.Text;
+                        }
+                    }
+                    else
+                    {
+                        lblVendeur.Text = lblVendeur.Tag != null ? lblVendeur.Tag.ToString() : lblVendeur.Text;
+                    }
+                }
             }
             catch (Exception ex)
             {
