@@ -85,5 +85,10 @@ namespace VehiculeNeufOccasion
             }
             
         }
+
+        private void frmVendre_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

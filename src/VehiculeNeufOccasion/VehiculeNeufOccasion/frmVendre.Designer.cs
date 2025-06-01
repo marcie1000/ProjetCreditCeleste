@@ -58,11 +58,11 @@ namespace VehiculeNeufOccasion
             this.listViewVehicules.FullRowSelect = true;
             this.listViewVehicules.GridLines = true;
             this.listViewVehicules.HideSelection = false;
-            this.listViewVehicules.Location = new System.Drawing.Point(29, 34);
-            this.listViewVehicules.Margin = new System.Windows.Forms.Padding(4);
+            this.listViewVehicules.Location = new System.Drawing.Point(16, 18);
+            this.listViewVehicules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listViewVehicules.MultiSelect = false;
             this.listViewVehicules.Name = "listViewVehicules";
-            this.listViewVehicules.Size = new System.Drawing.Size(1369, 716);
+            this.listViewVehicules.Size = new System.Drawing.Size(749, 390);
             this.listViewVehicules.TabIndex = 25;
             this.listViewVehicules.UseCompatibleStateImageBehavior = false;
             this.listViewVehicules.View = System.Windows.Forms.View.Details;
@@ -111,20 +111,20 @@ namespace VehiculeNeufOccasion
             // 
             this.lblMessage.AutoSize = true;
             this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.Location = new System.Drawing.Point(23, 776);
-            this.lblMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMessage.Location = new System.Drawing.Point(13, 420);
+            this.lblMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(112, 29);
+            this.lblMessage.Size = new System.Drawing.Size(65, 17);
             this.lblMessage.TabIndex = 26;
             this.lblMessage.Text = "Message";
             // 
             // btnVendre
             // 
             this.btnVendre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVendre.Location = new System.Drawing.Point(1200, 813);
-            this.btnVendre.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVendre.Location = new System.Drawing.Point(655, 440);
+            this.btnVendre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVendre.Name = "btnVendre";
-            this.btnVendre.Size = new System.Drawing.Size(199, 66);
+            this.btnVendre.Size = new System.Drawing.Size(109, 36);
             this.btnVendre.TabIndex = 27;
             this.btnVendre.Text = "&Vendre...";
             this.btnVendre.UseVisualStyleBackColor = true;
@@ -132,21 +132,22 @@ namespace VehiculeNeufOccasion
             // 
             // frmVendre
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1450, 950);
+            this.ClientSize = new System.Drawing.Size(791, 515);
             this.ControlBox = false;
             this.Controls.Add(this.btnVendre);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.listViewVehicules);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(1450, 950);
-            this.MinimumSize = new System.Drawing.Size(1450, 950);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(791, 515);
+            this.MinimumSize = new System.Drawing.Size(791, 515);
             this.Name = "frmVendre";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Revendre un véhicule";
+            this.Load += new System.EventHandler(this.frmVendre_Load);
             this.Shown += new System.EventHandler(this.frmVendre_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RecapitulatifInfo.cs" />
     <Compile Include="ClSuiteDeFenetres.cs" />
     <Compile Include="ClassesDonnees\Achat.cs" />
     <Compile Include="ClassesDonnees\AgenceCreditCeleste.cs" />
@@ -70,6 +71,12 @@
     <Compile Include="ClassesDonnees\Client.cs" />
     <Compile Include="ClassesDonnees\DemandePret.cs" />
     <Compile Include="ClassesDonnees\Etat.cs" />
+    <Compile Include="frmRecapitulatif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecapitulatif.Designer.cs">
+      <DependentUpon>frmRecapitulatif.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdministration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProposerCredit.resx">
       <DependentUpon>frmProposerCredit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecapitulatif.resx">
+      <DependentUpon>frmRecapitulatif.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVendre.resx">
       <DependentUpon>frmVendre.cs</DependentUpon>

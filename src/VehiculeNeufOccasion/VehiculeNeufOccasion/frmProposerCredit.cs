@@ -62,8 +62,27 @@ namespace VehiculeNeufOccasion
                     return;
                 }
 
-                // Si ce n'est pas un client temporaire, continuer normalement
+                // --- AJOUT POUR LE RECAPITULATIF ---
+                // Récupère les infos à afficher dans le récapitulatif
+                var vehicule = Globales.vehiculeSelectionneVente;
+                var client = Globales.clientSelectionne;
+                Vendeur vendeur = null; // L'utilisateur n'est pas un vendeur, donc on laisse null ou récupérez-le autrement si besoin
+                var montant = Globales.prixTotalAFinancer;
+                var prix = vehicule != null ? vehicule.Prix : 0;
+                bool vente = true; // ou false si location
+
+                int idxFenetre = Globales.suiteFenetres.getIndexFenetreActuelle();
+                // Supprime une éventuelle ancienne fenêtre de récapitulatif à la même position
+                if (idxFenetre + 1 < Globales.suiteFenetres.listeFenetres.Count &&
+                    Globales.suiteFenetres.listeFenetres[idxFenetre + 1] is frmRecapitulatif)
+                {
+                    Globales.suiteFenetres.listeFenetres.RemoveAt(idxFenetre + 1);
+                }
+                frmRecapitulatif fenRecap = new frmRecapitulatif(vehicule, client, vendeur, montant, prix, vente) { TopLevel = false, TopMost = true };
+                Globales.suiteFenetres.listeFenetres.Insert(idxFenetre + 1, fenRecap);
                 Globales.suiteFenetres.afficherFenetreSuivante(Globales.panelConteneurAcceuil, Globales.fenAccueil);
+                // --- FIN AJOUT ---
+
             }
             catch (Exception ex)
             {
@@ -100,7 +119,7 @@ namespace VehiculeNeufOccasion
             ordreListeCheckboxVerif = false;
             ordreListeCheckbox.Add(num);
 
-            switch(ordreListeCheckbox[0])
+            switch (ordreListeCheckbox[0])
             {
                 case 1:
                     cb1_NbMensualités.Checked = false;
@@ -198,7 +217,7 @@ namespace VehiculeNeufOccasion
         {
             demandePret.Taux = (double)numTaux.Value;
 
-            if(!cb1_NbMensualités.Checked)
+            if (!cb1_NbMensualités.Checked)
             {
                 // on calcule le nb de mensualités
                 demandePret.PremierApport = numPremierApport.Value;
@@ -208,9 +227,16 @@ namespace VehiculeNeufOccasion
                 decimal interetParMois = interetParAn / 12;
                 decimal remboursementParMois = demandePret.PrixMensualite - interetParMois;
                 demandePret.NombreMensualites = (int)Math.Ceiling(demandePret.MontantTotal / remboursementParMois);
-                numNbMensualites.Value = (decimal)demandePret.NombreMensualites;
+
+                // Correction : clamp la valeur dans les bornes du NumericUpDown
+                decimal nbMensu = demandePret.NombreMensualites;
+                if (nbMensu < numNbMensualites.Minimum)
+                    nbMensu = numNbMensualites.Minimum;
+                else if (nbMensu > numNbMensualites.Maximum)
+                    nbMensu = numNbMensualites.Maximum;
+                numNbMensualites.Value = nbMensu;
             }
-            else if(!cb2_MontantMensualites.Checked)
+            else if (!cb2_MontantMensualites.Checked)
             {
                 // on calcule le montant des mensualités
                 demandePret.PremierApport = numPremierApport.Value;
@@ -221,7 +247,14 @@ namespace VehiculeNeufOccasion
                 decimal interetParMois = interetParAn / 12;
                 decimal remboursementParMois = demandePret.MontantTotal / demandePret.NombreMensualites;
                 demandePret.PrixMensualite = remboursementParMois + interetParMois;
-                numMontantMensualites.Value = demandePret.PrixMensualite;
+
+                // Correction : clamp la valeur dans les bornes du NumericUpDown
+                decimal montantMensu = demandePret.PrixMensualite;
+                if (montantMensu < numMontantMensualites.Minimum)
+                    montantMensu = numMontantMensualites.Minimum;
+                else if (montantMensu > numMontantMensualites.Maximum)
+                    montantMensu = numMontantMensualites.Maximum;
+                numMontantMensualites.Value = montantMensu;
             }
             else
             {
@@ -232,8 +265,24 @@ namespace VehiculeNeufOccasion
                 decimal totalHorsPremierApport = demandePret.NombreMensualites * demandePret.PrixMensualite;
                 demandePret.MontantTotal = totalHorsPremierApport * (1 - nombreDAnnees * (decimal)demandePret.Taux / 100);
                 demandePret.PremierApport = Globales.prixTotalAFinancer - demandePret.MontantTotal;
-                numPremierApport.Value = demandePret.PremierApport;
+
+                // Correction : clamp la valeur dans les bornes du NumericUpDown
+                decimal premierApport = demandePret.PremierApport;
+                if (premierApport < numPremierApport.Minimum)
+                    premierApport = numPremierApport.Minimum;
+                else if (premierApport > numPremierApport.Maximum)
+                    premierApport = numPremierApport.Maximum;
+                numPremierApport.Value = premierApport;
             }
+
+            // Affichage du résultat dans les labels
+            lblPrixTotalVehicule.Text = Globales.vehiculeSelectionneVente.Prix.ToString("N2") + " €";
+            lblPrixTotal.Text = (Globales.prixTotalAFinancer).ToString("N2") + " €";
+            // Vous pouvez aussi afficher les mensualités, le nombre de mensualités, etc. si besoin
+            // Par exemple :
+            // lblNbMensualites.Text = numNbMensualites.Value.ToString();
+            // lblMontantMensualite.Text = numMontantMensualites.Value.ToString("N2") + " €";
+            // lblPremierApport.Text = numPremierApport.Value.ToString("N2") + " €";
         }
     }
 }

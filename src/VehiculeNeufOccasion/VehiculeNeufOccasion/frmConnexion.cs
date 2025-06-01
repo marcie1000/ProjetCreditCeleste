@@ -62,5 +62,10 @@ namespace VehiculeNeufOccasion
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void frmConnexion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
