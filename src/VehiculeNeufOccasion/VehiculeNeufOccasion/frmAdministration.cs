@@ -41,22 +41,74 @@ namespace VehiculeNeufOccasion
             switch (table)
             {
                 case "VEHICULE":
-                    MessageBox.Show("Ajout de véhicule non implémenté ici.");
+                    DialogResult r = MessageBox.Show("Ce véhicule sera ajouté dans les véhicules " +
+                        "appartenant au garage.", "Attention", MessageBoxButtons.OKCancel);
+                    if(r == DialogResult.OK)
+                    {
+                        Globales.vehiculeEdition = new Vehicule();
+                        Globales.vehiculeEdition.IdPersonnePossession = Globales.LeGarage.IdPersonne;
+                        Globales.vehiculeEdition.IdPersonnePossessionNavigation = Globales.LeGarage.IdPersonneNavigation;
+                        Globales.vehiculeEdition.Annee = 2010;
+                        LogiqueAchats.ajouterVehicule();
+                    }
                     break;
                 case "CLIENT":
-                    MessageBox.Show("Ajout de client non implémenté ici.");
+                    LogiqueClients.ajouterClient();
                     break;
                 case "VENDEUR":
                     MessageBox.Show("Ajout de vendeur non implémenté ici.");
                     break;
             }
+            LoadTableData();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dgvData.SelectedRows.Count == 0) return;
+            if (dgvData.SelectedRows.Count == 0) 
+                return;
+            DataRowView drv = dgvData.SelectedRows[0].DataBoundItem as DataRowView;
             string table = cbTables.SelectedItem.ToString();
-            MessageBox.Show("Modification non implémentée ici.");
+            switch (table)
+            {
+                case "CLIENT":
+                    Globales.clientEditionValide = false;
+                    Globales.clientEdition = new Client();
+                    Globales.clientEdition.Id = Convert.ToInt32(drv.Row["id"]);
+                    Globales.clientEdition.Prenom = drv.Row["prenom"].ToString();
+                    Globales.clientEdition.Nom = drv.Row["nom"].ToString();
+                    Globales.clientEdition.NumRue = drv.Row["numRue"].ToString();
+                    Globales.clientEdition.Cp = Convert.ToInt32(drv.Row["cp"]);
+                    Globales.clientEdition.Ville = drv.Row["ville"].ToString();
+                    Globales.clientEdition.NumTelephone = drv.Row["numTelephone"].ToString();
+                    Globales.clientEdition.Rue = drv.Row["rue"].ToString();
+                    Globales.clientEdition.Email = drv.Row["email"].ToString();
+                    Globales.clientEdition.IdPersonne = Convert.ToInt32(drv.Row["id_personne"]);
+                    LogiqueClients.updateClient();
+                    break;
+                case "VEHICULE":
+                    Globales.vehiculeEdition = new Vehicule();
+                    Globales.vehiculeEditionValide = false;
+                    Globales.vehiculeEdition.Annee = (int)drv.Row["annee"];
+                    Globales.vehiculeEdition.Kilometrage = (int)drv.Row["kilometrage"];
+                    Globales.vehiculeEdition.Prix = (decimal)drv.Row["prix"];
+                    Globales.vehiculeEdition.Puissance = (int)drv.Row["puissance"];
+                    Globales.vehiculeEdition.Couleur = (string)drv.Row["couleur"];
+                    Globales.vehiculeEdition.IdEtat = (int)drv.Row["id_etat"];
+                    Globales.vehiculeEdition.IdEtatNavigation = Globales.Etats[Globales.vehiculeEdition.IdEtat];
+                    Globales.vehiculeEdition.IdCarburant = (int)drv.Row["id_carburant"];
+                    Globales.vehiculeEdition.IdCarburantNavigation = Globales.Carburants[Globales.vehiculeEdition.IdCarburant];
+                    Globales.vehiculeEdition.IdModele = (int)drv.Row["id_modele"];
+                    Globales.vehiculeEdition.IdModeleNavigation = Globales.Modeles[Globales.vehiculeEdition.IdModele];
+                    Globales.vehiculeEdition.IdPersonnePossession = (int)drv.Row["id_personnePossession"];
+                    Globales.vehiculeEdition.IdPersonnePossessionNavigation = Globales.Personnes[Globales.vehiculeEdition.IdPersonnePossession];
+                    Globales.vehiculeEdition.Id = (int)drv.Row["id"];
+                    LogiqueAchats.updateVehicule();
+                    break;
+                default:
+                    MessageBox.Show("Modification non implémentée ici.");
+                    break;
+            }
+            LoadTableData();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

@@ -36,17 +36,49 @@ namespace VehiculeNeufOccasion
         private void frmAcheter_Load(object sender, EventArgs e)
         {
             rdbRachat.Checked = true;
+            refreshList();
+        }
+
+        private void refreshList()
+        {
+            try
+            {
+                //lblMessage.Text = "Recherche des véhicules disponibles.";
+                //lblMessage.Visible = false;
+                LogiqueVente.getLesVehiculesDeLaPersonne(Globales.clientSelectionne.IdPersonne);
+                listViewVehicules.Items.Clear();
+                foreach (Vehicule v in Globales.Vehicules.Values)
+                {
+                    ListViewItem item = new ListViewItem(v.IdModeleNavigation.IdMarqueNavigation.Nom);
+                    item.SubItems.Add(v.IdModeleNavigation.Nom);
+                    item.SubItems.Add(v.Annee.ToString());
+                    item.SubItems.Add(v.Kilometrage.ToString());
+                    item.SubItems.Add(v.Prix.ToString() + " €");
+                    item.SubItems.Add(v.Puissance.ToString());
+                    item.SubItems.Add(v.Couleur.ToString());
+                    item.SubItems.Add(v.IdCarburantNavigation.Designation);
+                    item.SubItems.Add(v.IdEtatNavigation.Designation);
+                    listViewVehicules.Items.Add(item);
+                }
+                //lblMessage.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void rdbNeRachetePas_CheckedChanged(object sender, EventArgs e)
         {
             if(rdbNeRachetePas.Checked == true)
             {
-                groupBoxInformations.Enabled = false;
+                listViewVehicules.Items.Clear();
+                gpbChoixV.Enabled = false;
             }
             else
             {
-                groupBoxInformations.Enabled = true;
+                refreshList();
+                gpbChoixV.Enabled = true;
             }
         }
 
@@ -61,6 +93,16 @@ namespace VehiculeNeufOccasion
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnCreer_Click(object sender, EventArgs e)
+        {
+            Globales.vehiculeEdition = new Vehicule();
+            Globales.vehiculeEdition.IdPersonnePossession = Globales.clientSelectionne.IdPersonne;
+            Globales.vehiculeEdition.IdPersonnePossessionNavigation = Globales.clientSelectionne.IdPersonneNavigation;
+            Globales.vehiculeEdition.Annee = 2010;
+            LogiqueAchats.ajouterVehicule();
+            refreshList();
         }
     }
 }

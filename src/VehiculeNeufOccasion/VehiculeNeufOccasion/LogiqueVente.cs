@@ -57,19 +57,24 @@ namespace VehiculeNeufOccasion
         }
 
 
+        public static bool getLesVehiculesDuGarage()
+        {
+            return getLesVehiculesDeLaPersonne(Globales.LeGarage.IdPersonne);
+        }
+
         /// <summary>
-        /// Récupère les véhicules (et les données associées) appartenant au garage dans la base de données.
+        /// Récupère les véhicules (et les données associées) appartenant à la personne dans la base de données.
         /// </summary>
         /// <returns>true si tout a fonctionné.</returns>
-        public static bool getLesVehiculesDuGarage()
+        public static bool getLesVehiculesDeLaPersonne(int idPersonne)
         {
             bool reussite = true;
 
             Globales.Vehicules.Clear();
 
-            using (SqlCommand commande = new SqlCommand("SELECT * FROM concession.VEHICULE WHERE id_personnePossession = @idGarage;"))
+            using (SqlCommand commande = new SqlCommand("SELECT * FROM concession.VEHICULE WHERE id_personnePossession = @idPersonne;"))
             {
-                commande.Parameters.AddWithValue("@idGarage", Globales.idGarage);
+                commande.Parameters.AddWithValue("@idPersonne", idPersonne);
 
                 try
                 {
