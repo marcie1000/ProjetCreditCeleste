@@ -56,6 +56,7 @@ namespace VehiculeNeufOccasion
             this.numMontantMensualites = new System.Windows.Forms.NumericUpDown();
             this.numTaux = new System.Windows.Forms.NumericUpDown();
             this.numPremierApport = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxChoix.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numNbMensualites)).BeginInit();
@@ -364,11 +365,22 @@ namespace VehiculeNeufOccasion
             this.numPremierApport.Size = new System.Drawing.Size(292, 27);
             this.numPremierApport.TabIndex = 27;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(480, 631);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(246, 35);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Générer facture";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmProposerCredit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 822);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.numPremierApport);
             this.Controls.Add(this.numTaux);
             this.Controls.Add(this.numMontantMensualites);
@@ -439,5 +451,6 @@ namespace VehiculeNeufOccasion
         private System.Windows.Forms.NumericUpDown numMontantMensualites;
         private System.Windows.Forms.NumericUpDown numTaux;
         private System.Windows.Forms.NumericUpDown numPremierApport;
+        private System.Windows.Forms.Button button1;
     }
 }
